@@ -17,3 +17,4 @@ class ISparqlParser
 
 
 #endif //SPARQL_QUERY_ISPARQLPARSER_HPP
+
