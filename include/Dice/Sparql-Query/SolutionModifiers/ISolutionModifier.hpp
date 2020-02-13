@@ -2,15 +2,15 @@
 // Created by fakhr on 12.02.20.
 //
 
-#ifndef SPARQL_QUERY_IQUERYMODIFIER_HPP
-#define SPARQL_QUERY_IQUERYMODIFIER_HPP
+#ifndef SPARQL_QUERY_ISOLUTIONMODIFIER_HPP
+#define SPARQL_QUERY_ISOLUTIONMODIFIER_HPP
 
 #include "../SelectQueryResult.hpp"
 
-class IQueryModifier
+class ISolutionModifier
 {
 public:
     virtual SelectQueryResult modifyResult(SelectQueryResult queryResult)=0;
 };
 
-#endif //SPARQL_QUERY_IQUERYMODIFIER_HPP
+#endif //SPARQL_QUERY_ISOLUTIONMODIFIER_HPP

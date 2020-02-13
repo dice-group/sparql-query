@@ -6,12 +6,12 @@
 #define SPARQL_QUERY_QUERYMODIFIER_HPP
 
 #include "QueryDecorator.hpp"
-#include "../QueryModifiers/IQueryModifier.hpp"
+#include "../SolutionModifiers/ISolutionModifier.hpp"
 
 class QueryModifingDecorator : public QueryDecorator
 {
 private:
-    std::shared_ptr<IQueryModifier> queryModifier;
+    std::shared_ptr<ISolutionModifier> queryModifier;
 public:
 
     SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
