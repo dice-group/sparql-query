@@ -3,10 +3,12 @@
 //
 #include "include/Dice/Sparql-Query/ISparqlParser.hpp"
 #include "include/Dice/Sparql-Query/SelectQuery.hpp"
-#include "include/Dice/Sparql-Query/QueryCommands/QueryModifingDecorator.hpp"
-#include "include/Dice/Sparql-Query/QueryCommands/SelectCommand.hpp"
-#include "include/Dice/Sparql-Query/QueryCommands/GroupPatternCommand.hpp"
-#include "include/Dice/Sparql-Query/QueryCommands/MinusPatternCommand.hpp"
+#include "include/Dice/Sparql-Query/QueryExecutors/QueryModifingDecorator.hpp"
+#include "include/Dice/Sparql-Query/QueryExecutors/SelectCommand.hpp"
+#include "include/Dice/Sparql-Query/QueryExecutors/GroupPatternCommand.hpp"
+#include "include/Dice/Sparql-Query/QueryExecutors/MinusPatternCommand.hpp"
+#include "include/Dice/Sparql-Query/QueryModifiers/ResultModifiers/DistinctModifier.hpp"
+#include "include/Dice/Sparql-Query/QueryExecutors/FilterPatternCommand.hpp"
 int main()
 {
     return 1;

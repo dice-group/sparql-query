@@ -12,8 +12,8 @@
 
 class CompositePatternCommand:public IQueryCommand
 {
-private:
-    //ToDo find the best collecion to use here(vector,list....)
+protected:
+    //ToDo find the best collection to use here(vector,list....)
     std::vector<std::shared_ptr<IQueryCommand>> children;
 
 public:

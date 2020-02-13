@@ -1,16 +1,24 @@
 //
 // Created by fakhr on 12.02.20.
 //
-#include "IQuery.hpp"
-#include "SelectQueryResult.hpp"
+
+
 #ifndef SPARQL_QUERY_SELECTQUERY_HPP
 #define SPARQL_QUERY_SELECTQUERY_HPP
 
+#include <memory>
+#include "IQuery.hpp"
+#include "SelectQueryResult.hpp"
+#include "QueryExecutors/SelectCommand.hpp"
+
 class SelectQuery:public IQuery<SelectQueryResult>
 {
+private:
+    std::shared_ptr<SelectCommand> command;
 public:
     SelectQueryResult executeQuery(const ITripleStore &tripleStore) override {
-        return SelectQueryResult();
+        //ToDo : find what exactly we should pass
+        return command->execute(SelectQueryResult());
     }
 };
 

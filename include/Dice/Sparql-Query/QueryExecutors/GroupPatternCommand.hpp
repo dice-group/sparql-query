@@ -11,9 +11,11 @@ class GroupPatternCommand:public CompositePatternCommand
 {
 
 public:
-    SelectQueryResult executeCommand(SelectQueryResult previousQueryResult) override {
-        //ToDo implement the logic here
-        return SelectQueryResult();
+    SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
+        SelectQueryResult queryResult=previousQueryResult;
+        for(auto child:children)
+            queryResult=child->execute(queryResult);
+        return queryResult;
     }
 };
 

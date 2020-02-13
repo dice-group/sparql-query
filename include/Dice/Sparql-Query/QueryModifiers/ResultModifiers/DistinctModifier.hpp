@@ -9,7 +9,11 @@
 
 class DistinctModifier:public IResultModifier
 {
-
+public:
+    SelectQueryResult modifyResult(SelectQueryResult queryResult) override {
+        //ToDo : this function must return a distinct query
+        return queryResult;
+    }
 };
 
 #endif //SPARQL_QUERY_DISTINCTMODIFIER_HPP
