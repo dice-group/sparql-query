@@ -9,6 +9,7 @@
 #include "include/Dice/Sparql-Query/QueryExecutors/MinusPatternCommand.hpp"
 #include "include/Dice/Sparql-Query/QueryModifiers/ResultModifiers/DistinctModifier.hpp"
 #include "include/Dice/Sparql-Query/QueryExecutors/FilterPatternCommand.hpp"
+#include "include/Dice/Sparql-Query/QueryExecutors/TripleCommandPattern.hpp"
 int main()
 {
     return 1;

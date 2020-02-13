@@ -18,6 +18,10 @@ private:
 public:
     SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override
     {
+        /**
+         * all the logic(which is encapsulated inside the queryExecutor) is executed first.
+         * then selecting is done based on the result of the previous step.
+         */
         SelectQueryResult queryResult=queryExecutor->execute(previousQueryResult);
         //ToDo : implement the logic of the selecting here
         return queryResult;

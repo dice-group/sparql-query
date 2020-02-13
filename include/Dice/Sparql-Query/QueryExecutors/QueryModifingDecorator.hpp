@@ -15,9 +15,10 @@ private:
 public:
 
     SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
-        //ToDo : here the order of execution is defined ..need to be reviewd carfully for all types of modifiers and add another decoator type if nedded
-        SelectQueryResult queryResult=queryModifier->modifyResult(previousQueryResult);
-        return wrappee->execute(queryResult);
+        //ToDo : here the order of execution is defined ..need to be reviewd carfully for all types of modifiers and add another decoator type if needed
+        SelectQueryResult queryResult= wrappee->execute(previousQueryResult);
+        queryResult=queryModifier->modifyResult(queryResult);
+        return queryResult;
     }
 };
 

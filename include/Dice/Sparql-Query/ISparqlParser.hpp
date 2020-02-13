@@ -11,8 +11,8 @@
 class ISparqlParser
 {
 
-    template <typename t>
-    IQuery<t> parseQuery(std::string);
+    template <typename QueryType>
+    IQuery<QueryType> parseQuery(std::string);
 };
 
 
