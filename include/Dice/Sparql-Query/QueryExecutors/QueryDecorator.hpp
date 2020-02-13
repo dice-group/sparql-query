@@ -5,18 +5,31 @@
 #ifndef SPARQL_QUERY_SELECTCOMMANDDECORATOR_HPP
 #define SPARQL_QUERY_SELECTCOMMANDDECORATOR_HPP
 
-#include "IQueryExecutor.hpp"
 #include <memory>
+
+#include "IQueryExecutor.hpp"
+#include "../SolutionModifiers/ISolutionModifier.hpp"
+
 
 class QueryDecorator : public IQueryExecutor
 {
-protected:
+private:
     std::shared_ptr<IQueryExecutor> wrappee;
+    std::shared_ptr<ISolutionModifier> queryModifier;
 public:
-    QueryDecorator(std::shared_ptr<IQueryExecutor> queryExecutor)
+    QueryDecorator(std::shared_ptr<IQueryExecutor> queryExecutor,std::shared_ptr<ISolutionModifier> queryModifier)
     {
         wrappee=queryExecutor;
+        this->queryModifier=queryModifier;
     }
+
+    SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
+        //ToDo : here the order of execution is defined ..need to be reviewd carfully for all types of modifiers and add another decoator type if needed
+        SelectQueryResult queryResult= wrappee->execute(previousQueryResult);
+        queryResult=queryModifier->modifyResult(queryResult);
+        return queryResult;
+    }
+
 };
 
 #endif //SPARQL_QUERY_SELECTCOMMANDDECORATOR_HPP

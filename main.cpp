@@ -3,7 +3,7 @@
 //
 #include "include/Dice/Sparql-Query/ISparqlParser.hpp"
 #include "include/Dice/Sparql-Query/SelectQuery.hpp"
-#include "include/Dice/Sparql-Query/QueryExecutors/QueryModifingDecorator.hpp"
+#include "include/Dice/Sparql-Query/QueryExecutors/QueryDecorator.hpp"
 #include "include/Dice/Sparql-Query/QueryExecutors/AbstractSelectCommand.hpp"
 #include "include/Dice/Sparql-Query/QueryExecutors/GroupPatternCommand.hpp"
 #include "include/Dice/Sparql-Query/QueryExecutors/MinusPatternCommand.hpp"
