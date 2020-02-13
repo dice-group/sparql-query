@@ -2,8 +2,8 @@
 // Created by fakhr on 12.02.20.
 //
 
-#ifndef SPARQL_QUERY_SELECTCOMMANDDECORATOR_HPP
-#define SPARQL_QUERY_SELECTCOMMANDDECORATOR_HPP
+#ifndef SPARQL_QUERY_SOLUTIONDECORATOR_HPP
+#define SPARQL_QUERY_SOLUTIONDECORATOR_HPP
 
 #include <memory>
 
@@ -11,13 +11,13 @@
 #include "../SolutionModifiers/ISolutionModifier.hpp"
 
 
-class QueryDecorator : public IQueryExecutor
+class SolutionDecorator : public IQueryExecutor
 {
 private:
     std::shared_ptr<IQueryExecutor> wrappee;
     std::shared_ptr<ISolutionModifier> queryModifier;
 public:
-    QueryDecorator(std::shared_ptr<IQueryExecutor> queryExecutor,std::shared_ptr<ISolutionModifier> queryModifier)
+    SolutionDecorator(std::shared_ptr<IQueryExecutor> queryExecutor,std::shared_ptr<ISolutionModifier> queryModifier)
     {
         wrappee=queryExecutor;
         this->queryModifier=queryModifier;
@@ -32,4 +32,4 @@ public:
 
 };
 
-#endif //SPARQL_QUERY_SELECTCOMMANDDECORATOR_HPP
+#endif //SPARQL_QUERY_SOLUTIONDECORATOR_HPP
