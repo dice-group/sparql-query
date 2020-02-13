@@ -25,6 +25,7 @@ private:
         return queryResult;
     }
 
+protected:
     virtual SelectQueryResult executeSelect(const SelectQueryResult& previousQueryResult)=0;
 
 public:
