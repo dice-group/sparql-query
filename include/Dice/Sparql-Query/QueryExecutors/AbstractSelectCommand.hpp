@@ -17,8 +17,13 @@ class AbstractSelectCommand : public IQueryCommand {
 
 private:
     std::shared_ptr<IQueryExecutor> queryExecutor;
+
+protected:
     std::vector<TripleVariable> patternVariables;
 
+
+
+private:
     SelectQueryResult executeSubCommand(const SelectQueryResult& previousQueryResult)
     {
         SelectQueryResult queryResult=queryExecutor->execute(previousQueryResult);
