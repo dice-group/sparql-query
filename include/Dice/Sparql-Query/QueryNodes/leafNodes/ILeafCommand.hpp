@@ -5,9 +5,9 @@
 #ifndef SPARQL_QUERY_ILEAFCOMMAND_HPP
 #define SPARQL_QUERY_ILEAFCOMMAND_HPP
 
-#include "IQueryCommand.hpp"
+#include "../ICommandNode.hpp"
 
-class ILeafCommand:public IQueryCommand
+class ILeafCommand:public ICommandNode
 {
 
 };

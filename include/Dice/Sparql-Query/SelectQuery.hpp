@@ -9,7 +9,7 @@
 #include <memory>
 #include "IQuery.hpp"
 #include "SelectQueryResult.hpp"
-#include "QueryExecutors/AbstractSelectCommand.hpp"
+#include "QueryNodes/SelectNodes/AbstractSelectCommand.hpp"
 
 class SelectQuery:public IQuery<SelectQueryResult>
 {

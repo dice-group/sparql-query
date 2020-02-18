@@ -7,26 +7,25 @@
 
 #include <memory>
 #include <vector>
-#include "IQueryCommand.hpp"
-#include "../TripleVariable.hpp"
+#include "../ICommandNode.hpp"
+#include "../../TripleVariable.hpp"
 
 /**
  * the stucture here follows template method pattern
  */
-class AbstractSelectCommand : public IQueryCommand {
+class AbstractSelectCommand : public ICommandNode {
 
 private:
-    std::shared_ptr<IQueryExecutor> queryExecutor;
+    std::shared_ptr<IQueryNode> queryNode;
 
 protected:
     std::vector<TripleVariable> patternVariables;
 
 
-
 private:
     SelectQueryResult executeSubCommand(const SelectQueryResult& previousQueryResult)
     {
-        SelectQueryResult queryResult=queryExecutor->execute(previousQueryResult);
+        SelectQueryResult queryResult=queryNode->execute(previousQueryResult);
         return queryResult;
     }
 

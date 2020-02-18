@@ -5,9 +5,9 @@
 #ifndef SPARQL_QUERY_IQUERYCOMMAND_HPP
 #define SPARQL_QUERY_IQUERYCOMMAND_HPP
 
-#include "IQueryExecutor.hpp"
+#include "IQueryNode.hpp"
 
-class IQueryCommand:public IQueryExecutor
+class ICommandNode:public IQueryNode
 {
 
 };

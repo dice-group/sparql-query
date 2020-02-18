@@ -7,7 +7,7 @@
 
 #include "../SelectQueryResult.hpp"
 
-class IQueryExecutor
+class IQueryNode
 {
 public:
     virtual SelectQueryResult execute(const SelectQueryResult& previousQueryResult)=0;

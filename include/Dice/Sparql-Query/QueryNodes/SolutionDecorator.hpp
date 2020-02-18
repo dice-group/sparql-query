@@ -7,19 +7,19 @@
 
 #include <memory>
 
-#include "IQueryExecutor.hpp"
+#include "IQueryNode.hpp"
 #include "../SolutionModifiers/ISolutionModifier.hpp"
 
 
-class SolutionDecorator : public IQueryExecutor
+class SolutionDecorator : public IQueryNode
 {
 private:
-    std::shared_ptr<IQueryExecutor> wrappee;
+    std::shared_ptr<IQueryNode> wrappee;
     std::shared_ptr<ISolutionModifier> queryModifier;
 public:
-    SolutionDecorator(std::shared_ptr<IQueryExecutor> queryExecutor,std::shared_ptr<ISolutionModifier> queryModifier)
+    SolutionDecorator(std::shared_ptr<IQueryNode> queryNode,std::shared_ptr<ISolutionModifier> queryModifier)
     {
-        wrappee=queryExecutor;
+        wrappee=queryNode;
         this->queryModifier=queryModifier;
     }
 

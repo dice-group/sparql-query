@@ -7,19 +7,19 @@
 
 #include <vector>
 #include <memory>
-#include "IQueryCommand.hpp"
+#include "../ICommandNode.hpp"
 
 
-class CompositePatternCommand:public IQueryCommand
+class CompositePatternCommand:public ICommandNode
 {
 protected:
     //ToDo find the best collection to use here(vector,list....)
-    std::vector<std::shared_ptr<IQueryCommand>> children;
+    std::vector<std::shared_ptr<ICommandNode>> children;
 
 public:
-    void addChild(std::shared_ptr<IQueryCommand> command)
+    void addChild(std::shared_ptr<ICommandNode> commandnode)
     {
-        children.push_back(command);
+        children.push_back(commandnode);
     }
 };
 
