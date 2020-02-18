@@ -2,12 +2,12 @@
 // Created by fakhr on 12.02.20.
 //
 
-#ifndef SPARQL_QUERY_TRIPLECOMMANDPATTERN_HPP
-#define SPARQL_QUERY_TRIPLECOMMANDPATTERN_HPP
+#ifndef SPARQL_QUERY_TRIPLEPATTERNNODE_HPP
+#define SPARQL_QUERY_TRIPLEPATTERNNODE_HPP
 
-#include "ILeafCommand.hpp"
+#include "ILeafNode.hpp"
 
-class TripleCommandPattern:public ILeafCommand
+class TriplePatternNode:public ILeafNode
 {
 public:
     SelectQueryResult execute(const SelectQueryResult &previousQueryResult) override {
@@ -16,4 +16,4 @@ public:
     }
 };
 
-#endif //SPARQL_QUERY_TRIPLECOMMANDPATTERN_HPP
+#endif //SPARQL_QUERY_TRIPLEPATTERNNODE_HPP

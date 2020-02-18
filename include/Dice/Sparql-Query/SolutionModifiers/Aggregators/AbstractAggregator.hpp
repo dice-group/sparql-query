@@ -5,7 +5,7 @@
 #ifndef SPARQL_QUERY_ABSTRACTAGGREGATOR_HPP
 #define SPARQL_QUERY_ABSTRACTAGGREGATOR_HPP
 
-#include "ISolutionModifier.hpp"
+#include "../ISolutionModifier.hpp"
 
 class AbstractAggregator:public ISolutionModifier
 {

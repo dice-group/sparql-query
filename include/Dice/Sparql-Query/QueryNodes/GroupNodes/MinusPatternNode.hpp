@@ -2,12 +2,12 @@
 // Created by fakhr on 12.02.20.
 //
 
-#ifndef SPARQL_QUERY_MINUSPATTERNCOMMAND_HPP
-#define SPARQL_QUERY_MINUSPATTERNCOMMAND_HPP
+#ifndef SPARQL_QUERY_MINUSPATTERNNODE_HPP
+#define SPARQL_QUERY_MINUSPATTERNNODE_HPP
 
-#include "CompositePatternCommand.hpp"
+#include "GroupNode.hpp"
 
-class MinusPatternCommand:public CompositePatternCommand
+class MinusPatternNode:public GroupNode
 {
 public:
     SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
@@ -19,4 +19,4 @@ public:
     }
 };
 
-#endif //SPARQL_QUERY_MINUSPATTERNCOMMAND_HPP
+#endif //SPARQL_QUERY_MINUSPATTERNNODE_HPP

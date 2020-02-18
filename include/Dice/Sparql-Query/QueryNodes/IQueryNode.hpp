@@ -2,8 +2,8 @@
 // Created by fakhr on 13.02.20.
 //
 
-#ifndef SPARQL_QUERY_IQUERYEXECUTOR_HPP
-#define SPARQL_QUERY_IQUERYEXECUTOR_HPP
+#ifndef SPARQL_QUERY_IQUERYNODE_HPP
+#define SPARQL_QUERY_IQUERYNODE_HPP
 
 #include "../SelectQueryResult.hpp"
 
@@ -13,4 +13,4 @@ public:
     virtual SelectQueryResult execute(const SelectQueryResult& previousQueryResult)=0;
 };
 
-#endif //SPARQL_QUERY_IQUERYEXECUTOR_HPP
+#endif //SPARQL_QUERY_IQUERYNODE_HPP

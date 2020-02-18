@@ -2,12 +2,12 @@
 // Created by fakhr on 12.02.20.
 //
 
-#ifndef SPARQL_QUERY_GROUPPATTERNCOMMAND_HPP
-#define SPARQL_QUERY_GROUPPATTERNCOMMAND_HPP
+#ifndef SPARQL_QUERY_GROUPPATTERNNODE_HPP
+#define SPARQL_QUERY_GROUPPATTERNNODE_HPP
 
-#include "CompositePatternCommand.hpp"
+#include "GroupNode.hpp"
 
-class GroupPatternCommand:public CompositePatternCommand
+class GroupPatternNode:public GroupNode
 {
 
 public:
@@ -19,4 +19,4 @@ public:
     }
 };
 
-#endif //SPARQL_QUERY_GROUPPATTERNCOMMAND_HPP
+#endif //SPARQL_QUERY_GROUPPATTERNNODE_HPP

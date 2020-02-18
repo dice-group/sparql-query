@@ -2,8 +2,8 @@
 // Created by fakhr on 12.02.20.
 //
 
-#ifndef SPARQL_QUERY_SELECTCOMMAND_HPP
-#define SPARQL_QUERY_SELECTCOMMAND_HPP
+#ifndef SPARQL_QUERY_ABSTRACTSELECTNODE_HPP
+#define SPARQL_QUERY_ABSTRACTSELECTNODE_HPP
 
 #include <memory>
 #include <vector>
@@ -13,7 +13,7 @@
 /**
  * the stucture here follows template method pattern
  */
-class AbstractSelectCommand : public ICommandNode {
+class AbstractSelectNode : public ICommandNode {
 
 private:
     std::shared_ptr<IQueryNode> queryNode;
@@ -42,5 +42,5 @@ public:
 
 };
 
-#endif //SPARQL_QUERY_SELECTCOMMAND_HPP
+#endif //SPARQL_QUERY_ABSTRACTSELECTNODE_HPP
 

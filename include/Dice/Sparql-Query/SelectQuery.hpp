@@ -9,12 +9,12 @@
 #include <memory>
 #include "IQuery.hpp"
 #include "SelectQueryResult.hpp"
-#include "QueryNodes/SelectNodes/AbstractSelectCommand.hpp"
+#include "QueryNodes/SelectNodes/AbstractSelectNode.hpp"
 
 class SelectQuery:public IQuery<SelectQueryResult>
 {
 private:
-    std::shared_ptr<AbstractSelectCommand> command;
+    std::shared_ptr<AbstractSelectNode> command;
 public:
     SelectQueryResult executeQuery(const ITripleStore &tripleStore) override {
         //ToDo : find what exactly we should pass
