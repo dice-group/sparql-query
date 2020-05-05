@@ -6,7 +6,6 @@
 #define SPARQL_QUERY_IQUERY_HPP
 
 #include "ITripleStore.hpp"
-z
 template <typename QueryResultType>
 class IQuery
 {

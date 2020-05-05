@@ -33,6 +33,12 @@ protected:
     virtual SelectQueryResult executeSelect(const SelectQueryResult& previousQueryResult)=0;
 
 public:
+
+    AbstractSelectNode(std::shared_ptr<IQueryNode> queryNode)
+    {
+        this->queryNode=queryNode;
+    }
+
      SelectQueryResult execute(const SelectQueryResult& previousQueryResult) final
     {
         SelectQueryResult queryResult= executeSubCommand(previousQueryResult);

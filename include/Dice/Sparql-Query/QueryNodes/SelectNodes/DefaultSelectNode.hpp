@@ -7,11 +7,15 @@
 
 #include "AbstractSelectNode.hpp"
 
-class DefaultSelectNode:public AbstractSelectNode
-{
+class DefaultSelectNode : public AbstractSelectNode {
+protected:
     SelectQueryResult executeSelect(const SelectQueryResult &previousQueryResult) override {
         return SelectQueryResult();
+
     }
+
+public:
+    DefaultSelectNode(std::shared_ptr <IQueryNode> queryNode):AbstractSelectNode(queryNode) {}
 };
 
 #endif //SPARQL_QUERY_DEFAULTSELECTNODE_HPP

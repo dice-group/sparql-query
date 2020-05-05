@@ -14,11 +14,16 @@
 class SelectQuery:public IQuery<SelectQueryResult>
 {
 private:
-    std::shared_ptr<AbstractSelectNode> command;
+    std::shared_ptr<IQueryNode> queryExecutor;
 public:
+    explicit SelectQuery( std::shared_ptr<IQueryNode> queryExecutor)
+    {
+        this->queryExecutor=queryExecutor;
+    }
+
     SelectQueryResult executeQuery(const ITripleStore &tripleStore) override {
         //ToDo : find what exactly we should pass
-        return command->execute(SelectQueryResult());
+        return queryExecutor->execute(SelectQueryResult());
     }
 };
 

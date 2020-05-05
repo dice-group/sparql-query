@@ -8,11 +8,15 @@
 
 #include "AbstractSelectNode.hpp"
 
-class ReducedSelectNode:public AbstractSelectNode
-{
+class ReducedSelectNode : public AbstractSelectNode {
+protected:
     SelectQueryResult executeSelect(const SelectQueryResult &previousQueryResult) override {
         return SelectQueryResult();
     }
+
+public:
+    ReducedSelectNode(std::shared_ptr<IQueryNode>
+    queryNode):AbstractSelectNode(queryNode) {}
 };
 
 #endif //SPARQL_QUERY_REDUCEDSELECTNODE_HPP
