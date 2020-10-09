@@ -19,7 +19,7 @@ private:
     std::shared_ptr<IQueryNode> queryNode;
 
 protected:
-    std::vector<TripleVariable> patternVariables;
+    std::vector<TripleVariable> selectVariables;
 
 
 private:
@@ -34,9 +34,10 @@ protected:
 
 public:
 
-    AbstractSelectNode(std::shared_ptr<IQueryNode> queryNode)
+    AbstractSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables)
     {
         this->queryNode=queryNode;
+        this->selectVariables=selectVariables;
     }
 
      SelectQueryResult execute(const SelectQueryResult& previousQueryResult) final

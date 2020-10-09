@@ -16,7 +16,7 @@ class SelectQuery:public IQuery<SelectQueryResult>
 private:
     std::shared_ptr<IQueryNode> queryExecutor;
 public:
-    explicit SelectQuery( std::shared_ptr<IQueryNode> queryExecutor)
+    explicit SelectQuery( std::shared_ptr<AbstractSelectNode> queryExecutor)
     {
         this->queryExecutor=queryExecutor;
     }

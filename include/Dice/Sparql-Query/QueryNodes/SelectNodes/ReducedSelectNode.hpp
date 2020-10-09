@@ -16,7 +16,7 @@ protected:
 
 public:
     ReducedSelectNode(std::shared_ptr<IQueryNode>
-    queryNode):AbstractSelectNode(queryNode) {}
+    queryNode):AbstractSelectNode(queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {}
 };
 
 #endif //SPARQL_QUERY_REDUCEDSELECTNODE_HPP
