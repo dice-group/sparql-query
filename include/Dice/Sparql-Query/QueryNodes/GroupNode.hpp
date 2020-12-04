@@ -7,7 +7,7 @@
 
 #include <vector>
 #include <memory>
-#include "../ICommandNode.hpp"
+#include "ICommandNode.hpp"
 
 
 class GroupNode:public ICommandNode

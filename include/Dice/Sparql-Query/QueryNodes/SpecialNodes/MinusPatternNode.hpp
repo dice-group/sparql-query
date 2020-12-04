@@ -5,15 +5,14 @@
 #ifndef SPARQL_QUERY_MINUSPATTERNNODE_HPP
 #define SPARQL_QUERY_MINUSPATTERNNODE_HPP
 
-#include "GroupNode.hpp"
+#include "SpecialNode.hpp"
 
-class MinusPatternNode:public GroupNode
+class MinusPatternNode:public SpecialNode
 {
 public:
     SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
         SelectQueryResult queryResult=previousQueryResult;
-        for(auto child:children)
-            queryResult=child->execute(queryResult);
+            queryResult=node->execute(queryResult);
         //ToDo implement the logic here to perform : return queryResult=previousQueryResult-queryResult
         return queryResult;
     }

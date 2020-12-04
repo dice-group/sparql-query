@@ -21,10 +21,18 @@ public:
         //ToDo : the actual logic of querying the triple store must be implemented here
         return SelectQueryResult();
     }
+    vector<char> process() override
+    {
+        for(auto element: elements)
+        {
+
+        }
+    }
 
 private:
     std::vector<TriplePatternElement> elements;
 
 };
+
 
 #endif //SPARQL_QUERY_TRIPLEPATTERNNODE_HPP
