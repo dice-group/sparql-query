@@ -17,6 +17,7 @@ protected:
     std::vector<std::shared_ptr<ICommandNode>> children;
 
 public:
+
     void addChild(std::shared_ptr<ICommandNode> commandnode)
     {
         children.push_back(commandnode);

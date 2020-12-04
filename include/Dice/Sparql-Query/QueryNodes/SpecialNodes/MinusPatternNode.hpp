@@ -10,6 +10,9 @@
 class MinusPatternNode:public SpecialNode
 {
 public:
+
+    MinusPatternNode(std::shared_ptr<ICommandNode> commandnode):SpecialNode(commandnode){};
+
     SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
         SelectQueryResult queryResult=previousQueryResult;
             queryResult=node->execute(queryResult);
