@@ -25,6 +25,11 @@ public:
         //ToDo : find what exactly we should pass
         return queryExecutor->execute(SelectQueryResult());
     }
+
+    std::vector<std::string> getSubscript()
+    {
+        return queryExecutor->generateSubscript();
+    }
 };
 
 #endif //SPARQL_QUERY_SELECTQUERY_HPP

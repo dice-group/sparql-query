@@ -32,6 +32,8 @@ public:
             if(std::holds_alternative<TripleVariable>(element.getThirdElement()))
                 subscript.push_back(std::get<TripleVariable>(element.getThirdElement()).getName());
         }
+
+        return subscript;
     }
 
 

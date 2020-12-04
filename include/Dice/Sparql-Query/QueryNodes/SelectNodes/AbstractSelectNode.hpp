@@ -47,6 +47,10 @@ public:
         return queryResult;
     }
 
+    std::vector<std::string> generateSubscript() override {
+        return queryNode->generateSubscript();
+    }
+
 };
 
 #endif //SPARQL_QUERY_ABSTRACTSELECTNODE_HPP
