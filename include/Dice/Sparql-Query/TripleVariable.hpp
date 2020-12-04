@@ -27,5 +27,15 @@ public:
         return name > rhs.name;
     }
 
+    std::string getName()
+    {
+        return name;
+    }
+
+    bool isAnonym()
+    {
+        return is_anonym;
+    }
+
 };
 #endif //SPARQL_QUERY_TRIPLEVARIABLE_HPP

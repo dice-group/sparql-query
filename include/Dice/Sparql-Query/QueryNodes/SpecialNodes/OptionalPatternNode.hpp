@@ -18,6 +18,18 @@ public:
         //ToDo implement the logic here to perform : return queryResult=previousQueryResult-queryResult
         return queryResult;
     }
+
+    std::vector<std::string> generateSubscript() override {
+        std::vector<std::string> subscript;
+        subscript.push_back("[");
+        std::vector<std::string> nodeSubscript=node->generateSubscript();
+        for(auto& subscriptElement : nodeSubscript)
+            subscript.push_back(subscriptElement);
+        subscript.push_back("]");
+
+        return subscript;
+    }
+
 };
 
 #endif //SPARQL_QUERY_OPTIONALPATTERNNODE_HPP

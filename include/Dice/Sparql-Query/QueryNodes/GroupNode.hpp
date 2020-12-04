@@ -30,6 +30,19 @@ public:
         //ToDo implement the logic here to perform : return queryResult=previousQueryResult-queryResult
         return queryResult;
     }
+
+    std::vector<std::string> generateSubscript() override {
+        std::vector<std::string> subscript;
+        for(auto &child:children)
+        {
+            std::vector<std::string> childSubscript=child->generateSubscript();
+            for(auto &subscriptElement:childSubscript)
+                subscript.push_back(subscriptElement);
+        }
+
+        return subscript;
+    }
 };
+
 
 #endif //SPARQL_QUERY_GROUPNODE_HPP

@@ -9,7 +9,11 @@
 
 class ICommandNode:public IQueryNode
 {
+public:
+    //ToDo
+    virtual std::vector<std::string> process(){};
 
+    virtual std::vector<std::string> generateSubscript()=0;
 };
 
 #endif //SPARQL_QUERY_ICOMMANDNODE_HPP

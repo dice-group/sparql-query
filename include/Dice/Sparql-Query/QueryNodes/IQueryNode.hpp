@@ -13,8 +13,6 @@ class IQueryNode
 public:
     virtual SelectQueryResult execute(const SelectQueryResult& previousQueryResult)=0;
 
-    //ToDo
-    virtual std::vector<std::string> process(){};
 };
 
 #endif //SPARQL_QUERY_IQUERYNODE_HPP
