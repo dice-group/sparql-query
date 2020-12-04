@@ -22,15 +22,17 @@ public:
         return SelectQueryResult();
     }
 
-    std::vector<std::string> generateSubscript() override {
-        std::vector<std::string> subscript;
+    std::vector<std::vector<std::string>> generateSubscript() override {
+        std::vector<std::vector<std::string>> subscript;
         for(TriplePatternElement& element:elements) {
+            std::vector<std::string> operands;
             if (std::holds_alternative<TripleVariable>(element.getFirstElement()))
-                subscript.push_back(std::get<TripleVariable>(element.getFirstElement()).getName());
+                operands.push_back(std::get<TripleVariable>(element.getFirstElement()).getName());
             if(std::holds_alternative<TripleVariable>(element.getSecondElement()))
-                subscript.push_back(std::get<TripleVariable>(element.getSecondElement()).getName());
+                operands.push_back(std::get<TripleVariable>(element.getSecondElement()).getName());
             if(std::holds_alternative<TripleVariable>(element.getThirdElement()))
-                subscript.push_back(std::get<TripleVariable>(element.getThirdElement()).getName());
+                operands.push_back(std::get<TripleVariable>(element.getThirdElement()).getName());
+            subscript.push_back(operands);
         }
 
         return subscript;

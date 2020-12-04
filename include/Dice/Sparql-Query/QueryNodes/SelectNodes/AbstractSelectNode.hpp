@@ -47,7 +47,7 @@ public:
         return queryResult;
     }
 
-    std::vector<std::string> generateSubscript() override {
+    std::vector<std::vector<std::string>> generateSubscript() override {
         return queryNode->generateSubscript();
     }
 

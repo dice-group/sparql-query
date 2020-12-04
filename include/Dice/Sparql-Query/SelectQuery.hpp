@@ -26,7 +26,7 @@ public:
         return queryExecutor->execute(SelectQueryResult());
     }
 
-    std::vector<std::string> getSubscript()
+    std::vector<std::vector<std::string>> getSubscript()
     {
         return queryExecutor->generateSubscript();
     }

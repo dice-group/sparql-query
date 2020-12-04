@@ -31,11 +31,11 @@ public:
         return queryResult;
     }
 
-    std::vector<std::string> generateSubscript() override {
-        std::vector<std::string> subscript;
+    std::vector<std::vector<std::string>> generateSubscript() override {
+        std::vector<std::vector<std::string>> subscript;
         for(auto &child:children)
         {
-            std::vector<std::string> childSubscript=child->generateSubscript();
+            std::vector<std::vector<std::string>> childSubscript=child->generateSubscript();
             for(auto &subscriptElement:childSubscript)
                 subscript.push_back(subscriptElement);
         }

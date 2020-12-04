@@ -19,13 +19,13 @@ public:
         return queryResult;
     }
 
-    std::vector<std::string> generateSubscript() override {
-        std::vector<std::string> subscript;
-        subscript.push_back("[");
-        std::vector<std::string> nodeSubscript=node->generateSubscript();
+    std::vector<std::vector<std::string>> generateSubscript() override {
+        std::vector<std::vector<std::string>> subscript;
+        subscript.push_back(std::vector<std::string>{"["});
+        std::vector<std::vector<std::string>> nodeSubscript=node->generateSubscript();
         for(auto& subscriptElement : nodeSubscript)
             subscript.push_back(subscriptElement);
-        subscript.push_back("]");
+        subscript.push_back(std::vector<std::string>{"]"});
 
         return subscript;
     }

@@ -30,6 +30,10 @@ public:
         return queryResult;
     }
 
+    std::vector<std::vector<std::string>> generateSubscript() override {
+        //ToDo check the architecture to avoid this
+        return  std::vector<std::vector<std::string>>{{""}};
+    }
 };
 
 #endif //SPARQL_QUERY_SOLUTIONDECORATOR_HPP
