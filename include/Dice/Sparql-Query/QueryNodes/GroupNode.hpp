@@ -25,7 +25,7 @@ public:
     SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
         SelectQueryResult queryResult=previousQueryResult;
         for(auto child:children)
-         queryResult=node->execute(queryResult);
+         queryResult=child->execute(queryResult);
         //ToDo implement the logic here to perform : return queryResult=previousQueryResult-queryResult
         return queryResult;
     }
