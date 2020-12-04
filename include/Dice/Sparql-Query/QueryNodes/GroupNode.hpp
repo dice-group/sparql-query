@@ -21,6 +21,14 @@ public:
     {
         children.push_back(commandnode);
     }
+
+    SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
+        SelectQueryResult queryResult=previousQueryResult;
+        for(auto child:children)
+         queryResult=node->execute(queryResult);
+        //ToDo implement the logic here to perform : return queryResult=previousQueryResult-queryResult
+        return queryResult;
+    }
 };
 
 #endif //SPARQL_QUERY_GROUPNODE_HPP
