@@ -45,6 +45,7 @@ public:
         this->selectVariables=selectVariables;
     }
 
+
      SelectQueryResult execute(const SelectQueryResult& previousQueryResult) final
     {
         SelectQueryResult queryResult= executeSubCommand(previousQueryResult);
