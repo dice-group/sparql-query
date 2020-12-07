@@ -12,7 +12,6 @@ class ICommandNode:public IQueryNode
 public:
 
 
-
 };
 
 #endif //SPARQL_QUERY_ICOMMANDNODE_HPP

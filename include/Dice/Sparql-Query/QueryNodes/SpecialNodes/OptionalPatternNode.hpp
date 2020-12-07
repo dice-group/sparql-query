@@ -30,6 +30,10 @@ public:
         return operands;
     }
 
+    std::vector<TriplePatternElement> getBgps() override {
+        return node->getBgps();
+    }
+
 };
 
 #endif //SPARQL_QUERY_OPTIONALPATTERNNODE_HPP

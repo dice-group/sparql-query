@@ -42,6 +42,18 @@ public:
 
         return operands;
     }
+
+    std::vector<TriplePatternElement> getBgps() override {
+        std::vector<TriplePatternElement> bgps;
+        for(auto &child:children)
+        {
+            std::vector<TriplePatternElement> childBgps=child->getBgps();
+            for(auto &elements:childBgps)
+                bgps.push_back(elements);
+        }
+
+        return bgps;
+    }
 };
 
 

@@ -26,5 +26,6 @@ TEST(subscriptGeneratingTests, basic1) {
     SelectQuery query(selectNode);
     auto operands=query.generateOperands();
     auto variables=query.getVariables();
+    auto bgps=query.getBgps();
     std::cout<<"end";
 }

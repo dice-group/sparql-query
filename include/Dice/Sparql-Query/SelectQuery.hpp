@@ -37,6 +37,11 @@ public:
         return selectNode->getVariables();
     }
 
+    std::vector<TriplePatternElement> getBgps()
+    {
+        return selectNode->getBgps();
+    }
+
 
 };
 

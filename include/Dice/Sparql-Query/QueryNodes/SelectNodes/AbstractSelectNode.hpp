@@ -17,20 +17,25 @@ class AbstractSelectNode : public ICommandNode {
 
 private:
     std::shared_ptr<IQueryNode> queryNode;
+    std::vector<std::vector<char>> operands;
 
 protected:
     std::vector<TripleVariable> selectVariables;
 
 
+
 private:
+
     SelectQueryResult executeSubCommand(const SelectQueryResult& previousQueryResult)
     {
         SelectQueryResult queryResult=queryNode->execute(previousQueryResult);
         return queryResult;
     }
 
+
 protected:
     virtual SelectQueryResult executeSelect(const SelectQueryResult& previousQueryResult)=0;
+
 
 public:
 
@@ -47,13 +52,21 @@ public:
         return queryResult;
     }
 
+
     std::vector<std::vector<std::string>> generateOperands() override {
         return queryNode->generateOperands();
     }
 
+
     std::vector<TripleVariable> getVariables()
     {
         return selectVariables;
+    }
+
+
+    std::vector<TriplePatternElement> getBgps()
+    {
+        return queryNode->getBgps();
     }
 
 };

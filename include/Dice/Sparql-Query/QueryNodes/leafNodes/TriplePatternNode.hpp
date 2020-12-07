@@ -12,6 +12,10 @@
 
 class TriplePatternNode:public ILeafNode
 {
+
+private:
+    std::vector<TriplePatternElement> elements;
+
 public:
     TriplePatternNode(std::vector<TriplePatternElement> elements)
     {
@@ -38,9 +42,11 @@ public:
         return operands;
     }
 
+    std::vector<TriplePatternElement> getBgps() override {
+        return elements;
 
-private:
-    std::vector<TriplePatternElement> elements;
+    }
+
 
 };
 
