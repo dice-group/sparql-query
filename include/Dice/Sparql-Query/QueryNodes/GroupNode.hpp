@@ -31,16 +31,16 @@ public:
         return queryResult;
     }
 
-    std::vector<std::vector<std::string>> generateSubscript() override {
-        std::vector<std::vector<std::string>> subscript;
+    std::vector<std::vector<std::string>> generateOperands() override {
+        std::vector<std::vector<std::string>> operands;
         for(auto &child:children)
         {
-            std::vector<std::vector<std::string>> childSubscript=child->generateSubscript();
-            for(auto &subscriptElement:childSubscript)
-                subscript.push_back(subscriptElement);
+            std::vector<std::vector<std::string>> childOperands=child->generateOperands();
+            for(auto &subscriptElement:childOperands)
+                operands.push_back(subscriptElement);
         }
 
-        return subscript;
+        return operands;
     }
 };
 

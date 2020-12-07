@@ -30,7 +30,7 @@ public:
         return queryResult;
     }
 
-    std::vector<std::vector<std::string>> generateSubscript() override {
+    std::vector<std::vector<std::string>> generateOperands() override {
         //ToDo check the architecture to avoid this
         return  std::vector<std::vector<std::string>>{{""}};
     }

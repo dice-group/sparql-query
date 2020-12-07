@@ -14,22 +14,30 @@
 class SelectQuery:public IQuery<SelectQueryResult>
 {
 private:
-    std::shared_ptr<IQueryNode> queryExecutor;
+    std::shared_ptr<AbstractSelectNode> selectNode;
 public:
-    explicit SelectQuery( std::shared_ptr<AbstractSelectNode> queryExecutor)
+    explicit SelectQuery( std::shared_ptr<AbstractSelectNode> selectNode)
     {
-        this->queryExecutor=queryExecutor;
+        this->selectNode=selectNode;
     }
 
     SelectQueryResult executeQuery(const ITripleStore &tripleStore) override {
         //ToDo : find what exactly we should pass
-        return queryExecutor->execute(SelectQueryResult());
+        return selectNode->execute(SelectQueryResult());
     }
 
-    std::vector<std::vector<std::string>> getSubscript()
+    std::vector<std::vector<std::string>> generateOperands()
     {
-        return queryExecutor->generateSubscript();
+        //ToDo
+        return selectNode->generateOperands();
     }
+
+    std::vector<TripleVariable> getVariables()
+    {
+        return selectNode->getVariables();
+    }
+
+
 };
 
 #endif //SPARQL_QUERY_SELECTQUERY_HPP

@@ -10,8 +10,8 @@
 class ICommandNode:public IQueryNode
 {
 public:
-    //ToDo
-    virtual std::vector<std::string> process(){};
+
+
 
 };
 

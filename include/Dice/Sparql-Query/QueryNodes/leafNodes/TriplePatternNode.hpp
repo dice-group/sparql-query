@@ -22,20 +22,20 @@ public:
         return SelectQueryResult();
     }
 
-    std::vector<std::vector<std::string>> generateSubscript() override {
-        std::vector<std::vector<std::string>> subscript;
+    std::vector<std::vector<std::string>> generateOperands() override {
+        std::vector<std::vector<std::string>> operands;
         for(TriplePatternElement& element:elements) {
-            std::vector<std::string> operands;
+            std::vector<std::string> patternOperands;
             if (std::holds_alternative<TripleVariable>(element.getFirstElement()))
-                operands.push_back(std::get<TripleVariable>(element.getFirstElement()).getName());
+                patternOperands.push_back(std::get<TripleVariable>(element.getFirstElement()).getName());
             if(std::holds_alternative<TripleVariable>(element.getSecondElement()))
-                operands.push_back(std::get<TripleVariable>(element.getSecondElement()).getName());
+                patternOperands.push_back(std::get<TripleVariable>(element.getSecondElement()).getName());
             if(std::holds_alternative<TripleVariable>(element.getThirdElement()))
-                operands.push_back(std::get<TripleVariable>(element.getThirdElement()).getName());
-            subscript.push_back(operands);
+                patternOperands.push_back(std::get<TripleVariable>(element.getThirdElement()).getName());
+            operands.push_back(patternOperands);
         }
 
-        return subscript;
+        return operands;
     }
 
 

@@ -13,7 +13,7 @@ class IQueryNode
 public:
     virtual SelectQueryResult execute(const SelectQueryResult& previousQueryResult)=0;
 
-    virtual std::vector<std::vector<std::string>> generateSubscript()=0;
+    virtual std::vector<std::vector<std::string>> generateOperands()=0;
 
 };
 

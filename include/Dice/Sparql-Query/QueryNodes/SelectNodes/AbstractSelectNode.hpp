@@ -47,8 +47,13 @@ public:
         return queryResult;
     }
 
-    std::vector<std::vector<std::string>> generateSubscript() override {
-        return queryNode->generateSubscript();
+    std::vector<std::vector<std::string>> generateOperands() override {
+        return queryNode->generateOperands();
+    }
+
+    std::vector<TripleVariable> getVariables()
+    {
+        return selectVariables;
     }
 
 };
