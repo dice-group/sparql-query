@@ -6,6 +6,7 @@
 #define SPARQL_QUERY_IQUERYNODE_HPP
 
 #include "../SelectQueryResult.hpp"
+#include "../TriplePatternElement.hpp"
 #include <vector>
 
 class IQueryNode

@@ -34,6 +34,11 @@ public:
         //ToDo check the architecture to avoid this
         return  std::vector<std::vector<std::string>>{{""}};
     }
+
+    std::vector<TriplePatternElement> getBgps() override {
+        //ToDo
+
+    }
 };
 
 #endif //SPARQL_QUERY_SOLUTIONDECORATOR_HPP

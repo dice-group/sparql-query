@@ -5,6 +5,7 @@
 #include <Dice/Sparql-Query/QueryNodes/GroupNode.hpp>
 #include <Dice/Sparql-Query/SelectQuery.hpp>
 #include <Dice/Sparql-Query/QueryNodes/SelectNodes/DefaultSelectNode.hpp>
+#include <Dice/Sparql-Query/QueryNodes/SolutionDecorator.hpp>
 
 TEST(subscriptGeneratingTests, basic1) {
     //creating 2 triple patterns and adding them into a node
