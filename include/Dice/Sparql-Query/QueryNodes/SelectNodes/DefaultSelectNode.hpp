@@ -15,7 +15,9 @@ protected:
     }
 
 public:
-    DefaultSelectNode(std::shared_ptr <IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {}
+    DefaultSelectNode(std::shared_ptr <IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {
+        this->selectModifier=SelectModifier::NONE;
+    }
 };
 
 #endif //SPARQL_QUERY_DEFAULTSELECTNODE_HPP

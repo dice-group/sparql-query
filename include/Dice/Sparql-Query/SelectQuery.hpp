@@ -7,6 +7,7 @@
 #define SPARQL_QUERY_SELECTQUERY_HPP
 
 #include <memory>
+#include <map>
 #include "IQuery.hpp"
 #include "SelectQueryResult.hpp"
 #include "QueryNodes/SelectNodes/AbstractSelectNode.hpp"
@@ -15,7 +16,7 @@ class SelectQuery:public IQuery<SelectQueryResult>
 {
 private:
     std::shared_ptr<AbstractSelectNode> selectNode;
-    std::unordered_map<std::string ,std::string> prefixes;
+    std::map<std::string ,std::string> prefixes;
 
 public:
     explicit SelectQuery( std::shared_ptr<AbstractSelectNode> selectNode)
@@ -23,7 +24,7 @@ public:
         this->selectNode=selectNode;
     }
 
-    explicit SelectQuery( std::shared_ptr<AbstractSelectNode> selectNode,std::unordered_map<std::string ,std::string> prefixes)
+    explicit SelectQuery( std::shared_ptr<AbstractSelectNode> selectNode,std::map<std::string ,std::string> prefixes)
     {
         this->selectNode=selectNode;
         this->prefixes=prefixes;
@@ -73,9 +74,16 @@ public:
         return selectNode->getBgps();
     }
 
-    std::unordered_map<std::string ,std::string> getPrefixes(){
+    std::map<std::string ,std::string> getPrefixes(){
         return this->prefixes;
     }
+
+    SelectModifier getSelectModifier()
+    {
+        return selectNode->getSelectModifier();
+    }
+
+
 
 
 };

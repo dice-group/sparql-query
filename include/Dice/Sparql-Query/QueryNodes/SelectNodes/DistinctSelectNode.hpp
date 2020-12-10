@@ -14,7 +14,9 @@ protected:
     }
 
 public:
-    DistinctSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {}
+    DistinctSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {
+        this->selectModifier=SelectModifier::DISTINCT;
+    }
 };
 
 #endif //SPARQL_QUERY_DISTINCTSELECTNODE_HPP

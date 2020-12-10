@@ -13,6 +13,14 @@
 /**
  * the stucture here follows template method pattern
  */
+
+
+enum SelectModifier {
+    NONE,
+    DISTINCT,
+    REDUCE
+};
+
 class AbstractSelectNode : public ICommandNode {
 
 private:
@@ -21,6 +29,7 @@ private:
 
 protected:
     std::vector<TripleVariable> selectVariables;
+    SelectModifier selectModifier;
 
 
 
@@ -68,6 +77,11 @@ public:
     std::vector<TriplePatternElement> getBgps()
     {
         return queryNode->getBgps();
+    }
+
+    SelectModifier getSelectModifier()
+    {
+        return this->selectModifier;
     }
 
 };
