@@ -68,15 +68,15 @@ public:
     SelectNode(std::shared_ptr<IQueryNode> queryNode, std::vector<TripleVariable> selectVariables)
     {
         this->queryNode=queryNode;
+        this->generateOperands();
         if(selectVariables.size()==1 && (std::find(selectVariables.begin(),selectVariables.end(),TripleVariable("*"))!=selectVariables.end()))
         {
             for(auto& label_pair : labelMap)
-                selectVariables.push_back(TripleVariable(label_pair.first));
+                this->selectVariables.push_back(TripleVariable(label_pair.first));
         }
         else
             this->selectVariables=selectVariables;
 
-        this->generateOperands();
     }
 
     SelectNode(std::shared_ptr<IQueryNode> queryNode, std::vector<TripleVariable> selectVariables,std::map<std::string ,std::string> prefixes):SelectNode(queryNode,selectVariables)
