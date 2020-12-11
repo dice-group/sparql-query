@@ -13,10 +13,10 @@ public:
     OptionalPatternNode(std::shared_ptr<ICommandNode> commandnode):SpecialNode(commandnode){};
 
 
-    std::vector<std::vector<std::string>> generateOperands() override {
+    std::vector<std::vector<std::string>> generateStringOperands() override {
         std::vector<std::vector<std::string>> operands;
         operands.push_back(std::vector<std::string>{"["});
-        std::vector<std::vector<std::string>> nodeoperands=node->generateOperands();
+        std::vector<std::vector<std::string>> nodeoperands= node->generateStringOperands();
         for(auto& subscriptElement : nodeoperands)
             operands.push_back(subscriptElement);
         operands.push_back(std::vector<std::string>{"]"});

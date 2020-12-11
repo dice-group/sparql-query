@@ -23,7 +23,7 @@ public:
     }
 
 
-    std::vector<std::vector<std::string>> generateOperands() override {
+    std::vector<std::vector<std::string>> generateStringOperands() override {
         std::vector<std::vector<std::string>> operands;
         for(TriplePatternElement& element:elements) {
             std::vector<std::string> patternOperands;

@@ -5,12 +5,12 @@
 #ifndef SPARQL_QUERY_DEFAULTSELECTNODE_HPP
 #define SPARQL_QUERY_DEFAULTSELECTNODE_HPP
 
-#include "AbstractSelectNode.hpp"
+#include "SelectNode.hpp"
 
-class DefaultSelectNode : public AbstractSelectNode {
+class DefaultSelectNode : public SelectNode {
 
 public:
-    DefaultSelectNode(std::shared_ptr <IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {
+    DefaultSelectNode(std::shared_ptr <IQueryNode> queryNode,std::vector<TripleVariable> selectVariables): SelectNode(queryNode, selectVariables) {
         this->selectModifier=SelectModifier::NONE;
     }
 };

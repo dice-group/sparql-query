@@ -24,11 +24,11 @@ public:
     }
 
 
-    std::vector<std::vector<std::string>> generateOperands() override {
+    std::vector<std::vector<std::string>> generateStringOperands() override {
         std::vector<std::vector<std::string>> operands;
         for(auto &child:children)
         {
-            std::vector<std::vector<std::string>> childOperands=child->generateOperands();
+            std::vector<std::vector<std::string>> childOperands= child->generateStringOperands();
             for(auto &subscriptElement:childOperands)
                 operands.push_back(subscriptElement);
         }

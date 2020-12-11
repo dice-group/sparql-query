@@ -3,7 +3,6 @@
 #include "Dice/Sparql-Query/QueryNodes/leafNodes/TriplePatternNode.hpp"
 #include <Dice/Sparql-Query/QueryNodes/SpecialNodes/OptionalPatternNode.hpp>
 #include <Dice/Sparql-Query/QueryNodes/GroupNode.hpp>
-#include <Dice/Sparql-Query/SelectQuery.hpp>
 #include <Dice/Sparql-Query/QueryNodes/SelectNodes/DefaultSelectNode.hpp>
 #include <Dice/Sparql-Query/QueryNodes/SolutionDecorator.hpp>
 
@@ -23,10 +22,9 @@ TEST(subscriptGeneratingTests, basic1) {
     groupNode->addChild(optionalNode1);
     //
     std::vector<TripleVariable> selectVariables{TripleVariable{"book"},TripleVariable{"nameY"},TripleVariable{"nickY"}};
-    std::shared_ptr<AbstractSelectNode> selectNode=std::make_shared<DefaultSelectNode>(groupNode,selectVariables);
-    SelectQuery query(selectNode);
-    auto operands=query.getOperands();
-    auto variables=query.getSelectVariables();
-    auto bgps=query.getBgps();
+    std::shared_ptr<SelectNode> selectNode=std::make_shared<DefaultSelectNode>(groupNode, selectVariables);
+    auto operands=selectNode->getOperands();
+    auto variables=selectNode->getSelectVariables();
+    auto bgps=selectNode->getBgps();
     std::cout<<"end";
 }

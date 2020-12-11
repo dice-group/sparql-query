@@ -5,13 +5,13 @@
 #ifndef SPARQL_QUERY_DISTINCTSELECTNODE_HPP
 #define SPARQL_QUERY_DISTINCTSELECTNODE_HPP
 
-#include "AbstractSelectNode.hpp"
+#include "SelectNode.hpp"
 
-class DistinctSelectNode : public AbstractSelectNode {
+class DistinctSelectNode : public SelectNode {
 
 
 public:
-    DistinctSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {
+    DistinctSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):SelectNode(queryNode,selectVariables) {
         this->selectModifier=SelectModifier::DISTINCT;
     }
 };

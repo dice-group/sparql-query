@@ -30,7 +30,7 @@ public:
 //        return queryResult;
 //    }
 
-    std::vector<std::vector<std::string>> generateOperands() override {
+    std::vector<std::vector<std::string>> generateStringOperands() override {
         //ToDo check the architecture to avoid this
         return  std::vector<std::vector<std::string>>{{""}};
     }

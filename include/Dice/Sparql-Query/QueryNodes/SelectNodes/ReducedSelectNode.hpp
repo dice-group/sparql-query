@@ -6,12 +6,12 @@
 #define SPARQL_QUERY_REDUCEDSELECTNODE_HPP
 
 
-#include "AbstractSelectNode.hpp"
+#include "SelectNode.hpp"
 
-class ReducedSelectNode : public AbstractSelectNode {
+class ReducedSelectNode : public SelectNode {
 
 public:
-    ReducedSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {
+    ReducedSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):SelectNode(queryNode,selectVariables) {
         this->selectModifier=SelectModifier::REDUCE;
     }
 };
