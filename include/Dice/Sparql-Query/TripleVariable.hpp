@@ -27,12 +27,12 @@ public:
         return name > rhs.name;
     }
 
-    std::string getName()
+    std::string getName() const
     {
         return name;
     }
 
-    bool isAnonym()
+    bool isAnonym() const
     {
         return is_anonym;
     }

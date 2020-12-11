@@ -12,7 +12,7 @@
 
 class TriplePatternElement
 {
-private:
+public:
     using VarOrTerm = std::variant<TripleVariable, rdf_parser::store::rdf::Term>;
     std::array<VarOrTerm, 3> triplePattern;
 
