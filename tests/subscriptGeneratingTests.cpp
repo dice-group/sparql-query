@@ -6,6 +6,9 @@
 #include <Dice/Sparql-Query/QueryNodes/SelectNodes/DefaultSelectNode.hpp>
 #include <Dice/Sparql-Query/QueryNodes/SolutionDecorator.hpp>
 
+using namespace SparqlQueryGraph::Nodes::SelectNodes;
+using namespace SparqlQueryGraph::Nodes::GraphNodes;
+
 TEST(subscriptGeneratingTests, basic1) {
     //creating 2 triple patterns and adding them into a node
     std::vector<TriplePatternElement> elements{TriplePatternElement{TripleVariable{"?book"},Term("<dc:title>"),TripleVariable("?title")},

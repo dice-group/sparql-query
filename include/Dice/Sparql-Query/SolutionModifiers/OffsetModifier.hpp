@@ -7,10 +7,10 @@
 
 
 #include "ISolutionModifier.hpp"
+namespace SparqlQueryGraph::Nodes::Modifiers {
+    class OffsetModifier : public ISolutionModifier {
 
-class OffsetModifier:public ISolutionModifier
-{
-
-};
+    };
+}
 
 #endif //SPARQL_QUERY_OFFSETMODIFIER_HPP

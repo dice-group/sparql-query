@@ -5,15 +5,10 @@
 #ifndef SPARQL_QUERY_INLINEPATTERNNODE_HPP
 #define SPARQL_QUERY_INLINEPATTERNNODE_HPP
 
-#include "../ICommandNode.hpp"
-
-class InlinePatternNode:public ILeafNode
-{
-public:
-    SelectQueryResult execute(const SelectQueryResult &previousQueryResult) override {
-        //ToDo : the actual logic must be implemented here
-        return SelectQueryResult();
-    }
-};
+#include "ILeafNode.hpp"
+namespace SparqlQueryGraph::Nodes::GraphNodes {
+    class InlinePatternNode : public ILeafNode {
+    };
+}
 
 #endif //SPARQL_QUERY_INLINEPATTERNNODE_HPP

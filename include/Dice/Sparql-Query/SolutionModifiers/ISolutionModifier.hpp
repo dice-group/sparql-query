@@ -6,11 +6,11 @@
 #define SPARQL_QUERY_ISOLUTIONMODIFIER_HPP
 
 
+namespace SparqlQueryGraph::Nodes::Modifiers {
+    class ISolutionModifier {
+    public:
 
-class ISolutionModifier
-{
-public:
-
-};
+    };
+}
 
 #endif //SPARQL_QUERY_ISOLUTIONMODIFIER_HPP

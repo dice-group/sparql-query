@@ -5,16 +5,15 @@
 #ifndef SPARQL_QUERY_BINDPATTERNNODE_HPP
 #define SPARQL_QUERY_BINDPATTERNNODE_HPP
 
-#include "../ICommandNode.hpp"
+#include "ILeafNode.hpp"
+
+namespace SparqlQueryGraph::Nodes::GraphNodes{
 
 class BindPatternNode:public ILeafNode
 {
-public:
-    SelectQueryResult execute(const SelectQueryResult &previousQueryResult) override {
-        //ToDo : the actual logic must be implemented here
-        return SelectQueryResult();
-    }
+
 };
+}
 
 
 #endif //SPARQL_QUERY_BINDPATTERNNODE_HPP

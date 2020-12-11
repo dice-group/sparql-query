@@ -8,10 +8,10 @@
 
 
 #include "ISolutionModifier.hpp"
+namespace SparqlQueryGraph::Nodes::Modifiers {
+    class OrderByModifier : public ISolutionModifier {
 
-class OrderByModifier:public ISolutionModifier
-{
-
-};
+    };
+}
 
 #endif //SPARQL_QUERY_ORDERBYMODIFIER_HPP

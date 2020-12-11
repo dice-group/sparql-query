@@ -7,9 +7,10 @@
 
 #include "../ICommandNode.hpp"
 
-class ILeafNode:public ICommandNode
-{
+namespace SparqlQueryGraph::Nodes::GraphNodes {
+    class ILeafNode : public ICommandNode {
 
-};
+    };
+}
 
 #endif //SPARQL_QUERY_ILEAFCNODE_HPP

@@ -9,17 +9,15 @@
 #include <memory>
 #include "../ICommandNode.hpp"
 
+namespace SparqlQueryGraph::Nodes::GraphNodes {
+    class SpecialNode : public ICommandNode {
+    protected:
+        std::shared_ptr<ICommandNode> node;
 
-class SpecialNode:public ICommandNode
-{
-protected:
-    std::shared_ptr<ICommandNode> node;
-
-public:
-    SpecialNode(std::shared_ptr<ICommandNode> commandnode)
-    {
-        node=commandnode;
-    }
-};
-
+    public:
+        SpecialNode(std::shared_ptr<ICommandNode> commandnode) {
+            node = commandnode;
+        }
+    };
+}
 #endif //SPARQL_QUERY_SPECIALNODE_HPP

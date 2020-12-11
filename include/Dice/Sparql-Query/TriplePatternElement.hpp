@@ -9,21 +9,21 @@
 
 #include "TripleVariable.hpp"
 #include <Dice/rdf_parser/RDF/Term.hpp>
+namespace SparqlQueryGraph {
+    class TriplePatternElement {
+    public:
+        using VarOrTerm = std::variant<TripleVariable, rdf_parser::store::rdf::Term>;
+        std::array<VarOrTerm, 3> triplePattern;
 
-class TriplePatternElement
-{
-public:
-    using VarOrTerm = std::variant<TripleVariable, rdf_parser::store::rdf::Term>;
-    std::array<VarOrTerm, 3> triplePattern;
+    public:
+        explicit TriplePatternElement(VarOrTerm element1, VarOrTerm element2, VarOrTerm element3) : triplePattern{
+                element1, element2, element3} {};
 
-public:
-    explicit TriplePatternElement(VarOrTerm element1,VarOrTerm element2,VarOrTerm element3):triplePattern{element1,element2,element3}{};
+        VarOrTerm getFirstElement() { return triplePattern.at(0); };
 
-    VarOrTerm getFirstElement(){ return triplePattern.at(0);};
+        VarOrTerm getSecondElement() { return triplePattern.at(1); };
 
-    VarOrTerm getSecondElement(){ return triplePattern.at(1);};
-
-    VarOrTerm getThirdElement(){ return triplePattern.at(2);};
-};
-
+        VarOrTerm getThirdElement() { return triplePattern.at(2); };
+    };
+}
 #endif //SPARQL_QUERYGRAPH_TRIPLEPATTERNELEMENT_HPP

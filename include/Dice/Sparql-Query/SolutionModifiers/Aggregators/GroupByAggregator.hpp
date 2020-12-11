@@ -6,10 +6,10 @@
 #define SPARQL_QUERY_GROUPBYAGGREGATOR_HPP
 
 #include "AbstractAggregator.hpp"
+namespace SparqlQueryGraph::Nodes::Modifiers {
+    class GroupByAggregator : public AbstractAggregator {
 
-class GroupByAggregator :public  AbstractAggregator
-{
-
-};
+    };
+}
 
 #endif //SPARQL_QUERY_GROUPBYAGGREGATOR_HPP

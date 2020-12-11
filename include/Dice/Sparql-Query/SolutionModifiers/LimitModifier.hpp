@@ -6,10 +6,10 @@
 #define SPARQL_QUERY_LIMITMODIFIER_HPP
 
 #include "ISolutionModifier.hpp"
+namespace SparqlQueryGraph::Nodes::Modifiers {
+    class LimitModifier : public ISolutionModifier {
 
-class LimitModifier:public ISolutionModifier
-{
-
-};
+    };
+}
 
 #endif //SPARQL_QUERY_LIMITMODIFIER_HPP

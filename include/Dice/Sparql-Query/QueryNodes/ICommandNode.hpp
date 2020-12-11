@@ -7,11 +7,12 @@
 
 #include "IQueryNode.hpp"
 
-class ICommandNode:public IQueryNode
-{
-public:
+namespace SparqlQueryGraph::Nodes {
+    class ICommandNode : public IQueryNode {
+    public:
 
 
-};
+    };
+}
 
 #endif //SPARQL_QUERY_ICOMMANDNODE_HPP

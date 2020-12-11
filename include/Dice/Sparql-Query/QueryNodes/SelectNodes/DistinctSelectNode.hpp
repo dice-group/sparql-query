@@ -7,17 +7,21 @@
 
 #include "SelectNode.hpp"
 
-class DistinctSelectNode : public SelectNode {
+namespace SparqlQueryGraph::Nodes::SelectNodes {
+    class DistinctSelectNode : public SelectNode {
 
 
-public:
-    DistinctSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):SelectNode(queryNode,selectVariables) {
-        this->selectModifier=SelectModifier::DISTINCT;
-    }
+    public:
+        DistinctSelectNode(std::shared_ptr<IQueryNode> queryNode, std::vector<TripleVariable> selectVariables)
+                : SelectNode(queryNode, selectVariables) {
+            this->selectModifier = SelectModifier::DISTINCT;
+        }
 
-    DistinctSelectNode(std::shared_ptr <IQueryNode> queryNode,std::vector<TripleVariable> selectVariables,std::map<std::string ,std::string> prefixes): SelectNode(queryNode, selectVariables,prefixes) {
-        this->selectModifier=SelectModifier::DISTINCT;
-    }
-};
-
+        DistinctSelectNode(std::shared_ptr<IQueryNode> queryNode, std::vector<TripleVariable> selectVariables,
+                           std::map<std::string, std::string> prefixes) : SelectNode(queryNode, selectVariables,
+                                                                                     prefixes) {
+            this->selectModifier = SelectModifier::DISTINCT;
+        }
+    };
+}
 #endif //SPARQL_QUERY_DISTINCTSELECTNODE_HPP

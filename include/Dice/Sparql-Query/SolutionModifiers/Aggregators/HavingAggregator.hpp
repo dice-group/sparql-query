@@ -6,10 +6,10 @@
 #define SPARQL_QUERY_HAVINGAGGREGATOR_HPP
 
 #include "AbstractAggregator.hpp"
+namespace SparqlQueryGraph::Nodes::Modifiers {
+    class HavingAggregator : public AbstractAggregator {
 
-class HavingAggregator:public AbstractAggregator
-{
-
-};
+    };
+}
 
 #endif //SPARQL_QUERY_HAVINGAGGREGATOR_HPP

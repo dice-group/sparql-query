@@ -4,5 +4,5 @@
 #include <Dice/Sparql-Query/QueryNodes/SpecialNodes/OptionalPatternNode.hpp>
 #include <Dice/Sparql-Query/QueryNodes/GroupNode.hpp>
 TEST(GrammerTests, junk) {
-OptionalPatternNode node();
+
 }

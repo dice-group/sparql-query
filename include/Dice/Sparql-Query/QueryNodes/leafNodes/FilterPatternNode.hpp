@@ -5,15 +5,13 @@
 #ifndef SPARQL_QUERY_FILTERPATTERNNODE_HPP
 #define SPARQL_QUERY_FILTERPATTERNNODE_HPP
 
-#include "../ICommandNode.hpp"
+#include "ILeafNode.hpp"
 
-class FilterPatternNode:public ILeafNode
-{
-public:
-    SelectQueryResult execute(const SelectQueryResult &previousQueryResult) override {
-        //ToDo : the actual logic must be implemented here
-        return SelectQueryResult();
-    }
-};
+namespace SparqlQueryGraph::Nodes::GraphNodes {
+    class FilterPatternNode : public ILeafNode {
+    public:
+
+    };
+}
 
 #endif //SPARQL_QUERY_FILTERPATTERNNODE_HPP
