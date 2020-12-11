@@ -25,8 +25,8 @@ TEST(subscriptGeneratingTests, basic1) {
     std::vector<TripleVariable> selectVariables{TripleVariable{"book"},TripleVariable{"nameY"},TripleVariable{"nickY"}};
     std::shared_ptr<AbstractSelectNode> selectNode=std::make_shared<DefaultSelectNode>(groupNode,selectVariables);
     SelectQuery query(selectNode);
-    auto operands=query.generateOperands();
-    auto variables=query.getVariables();
+    auto operands=query.getOperands();
+    auto variables=query.getSelectVariables();
     auto bgps=query.getBgps();
     std::cout<<"end";
 }

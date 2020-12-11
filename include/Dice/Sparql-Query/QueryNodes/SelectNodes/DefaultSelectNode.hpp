@@ -8,11 +8,6 @@
 #include "AbstractSelectNode.hpp"
 
 class DefaultSelectNode : public AbstractSelectNode {
-protected:
-    SelectQueryResult executeSelect(const SelectQueryResult &previousQueryResult) override {
-        return SelectQueryResult();
-
-    }
 
 public:
     DefaultSelectNode(std::shared_ptr <IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {

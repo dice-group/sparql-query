@@ -23,13 +23,6 @@ public:
         children.push_back(commandnode);
     }
 
-    SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
-        SelectQueryResult queryResult=previousQueryResult;
-        for(auto child:children)
-         queryResult=child->execute(queryResult);
-        //ToDo implement the logic here to perform : return queryResult=previousQueryResult-queryResult
-        return queryResult;
-    }
 
     std::vector<std::vector<std::string>> generateOperands() override {
         std::vector<std::vector<std::string>> operands;

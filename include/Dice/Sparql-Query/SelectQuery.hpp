@@ -8,11 +8,10 @@
 
 #include <memory>
 #include <map>
-#include "IQuery.hpp"
 #include "SelectQueryResult.hpp"
 #include "QueryNodes/SelectNodes/AbstractSelectNode.hpp"
 
-class SelectQuery:public IQuery<SelectQueryResult>
+class SelectQuery
 {
 private:
     std::shared_ptr<AbstractSelectNode> selectNode;
@@ -54,11 +53,6 @@ public:
         this->selectNode=selectNode;
         this->prefixes=prefixes;
         generateOperands();
-    }
-
-    SelectQueryResult executeQuery(const ITripleStore &tripleStore) override {
-        //ToDo : find what exactly we should pass
-        return selectNode->execute(SelectQueryResult());
     }
 
 

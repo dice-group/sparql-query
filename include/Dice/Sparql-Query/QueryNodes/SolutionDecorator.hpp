@@ -23,12 +23,12 @@ public:
         this->queryModifier=queryModifier;
     }
 
-    SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
-        //ToDo : here the order of execution is defined ..need to be reviewd carfully for all types of modifiers and add another decoator type if needed
-        SelectQueryResult queryResult= wrappee->execute(previousQueryResult);
-        queryResult=queryModifier->modifyResult(queryResult);
-        return queryResult;
-    }
+//    SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
+//        //ToDo : here the order of execution is defined ..need to be reviewd carfully for all types of modifiers and add another decoator type if needed
+//        SelectQueryResult queryResult= wrappee->execute(previousQueryResult);
+//        queryResult=queryModifier->modifyResult(queryResult);
+//        return queryResult;
+//    }
 
     std::vector<std::vector<std::string>> generateOperands() override {
         //ToDo check the architecture to avoid this

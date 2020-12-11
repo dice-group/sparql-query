@@ -9,10 +9,6 @@
 #include "AbstractSelectNode.hpp"
 
 class ReducedSelectNode : public AbstractSelectNode {
-protected:
-    SelectQueryResult executeSelect(const SelectQueryResult &previousQueryResult) override {
-        return SelectQueryResult();
-    }
 
 public:
     ReducedSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {

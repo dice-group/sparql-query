@@ -21,10 +21,7 @@ public:
     {
         this->elements=elements;
     }
-    SelectQueryResult execute(const SelectQueryResult &previousQueryResult) override {
-        //ToDo : the actual logic of querying the triple store must be implemented here
-        return SelectQueryResult();
-    }
+
 
     std::vector<std::vector<std::string>> generateOperands() override {
         std::vector<std::vector<std::string>> operands;

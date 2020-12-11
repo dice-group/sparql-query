@@ -10,10 +10,6 @@
 #include "../ICommandNode.hpp"
 #include "../../TripleVariable.hpp"
 
-/**
- * the stucture here follows template method pattern
- */
-
 
 enum SelectModifier {
     NONE,
@@ -25,7 +21,6 @@ class AbstractSelectNode : public ICommandNode {
 
 private:
     std::shared_ptr<IQueryNode> queryNode;
-    std::vector<std::vector<char>> operands;
 
 protected:
     std::vector<TripleVariable> selectVariables;
@@ -33,34 +28,19 @@ protected:
 
 
 
-private:
-
-    SelectQueryResult executeSubCommand(const SelectQueryResult& previousQueryResult)
-    {
-        SelectQueryResult queryResult=queryNode->execute(previousQueryResult);
-        return queryResult;
-    }
-
-
-protected:
-    virtual SelectQueryResult executeSelect(const SelectQueryResult& previousQueryResult)=0;
-
-
 public:
 
     AbstractSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables)
     {
         this->queryNode=queryNode;
-        this->selectVariables=selectVariables;
+        if(selectVariables.size()==1 && (std::find(selectVariables.begin(),selectVariables.end(),TripleVariable("*"))!=selectVariables.end()))
+        {
+
+        }
+        else
+            this->selectVariables=selectVariables;
     }
 
-
-     SelectQueryResult execute(const SelectQueryResult& previousQueryResult) final
-    {
-        SelectQueryResult queryResult= executeSubCommand(previousQueryResult);
-        queryResult=(queryResult);
-        return queryResult;
-    }
 
 
     std::vector<std::vector<std::string>> generateOperands() override {

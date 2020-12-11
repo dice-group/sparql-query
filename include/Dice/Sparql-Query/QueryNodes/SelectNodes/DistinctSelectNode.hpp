@@ -8,10 +8,7 @@
 #include "AbstractSelectNode.hpp"
 
 class DistinctSelectNode : public AbstractSelectNode {
-protected:
-    SelectQueryResult executeSelect(const SelectQueryResult &previousQueryResult) override {
-        return SelectQueryResult();
-    }
+
 
 public:
     DistinctSelectNode(std::shared_ptr<IQueryNode> queryNode,std::vector<TripleVariable> selectVariables):AbstractSelectNode(queryNode,selectVariables) {
