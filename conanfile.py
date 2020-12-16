@@ -13,7 +13,7 @@ class RDFParser(ConanFile):
     generators = "cmake", "cmake_find_package", "cmake_paths"
     exports = "LICENSE"
     exports_sources = "include/*", "CMakeLists.txt", "cmake/dummy-config.cmake.in"
-    requires="rdf-parser/0.10@dice-group/stable","gtest/1.8.1@bincrafters/stable"
+    requires="rdf-parser/0.11@dice-group/stable","gtest/1.8.1"
     no_copy_source = True
 
     def package(self):
