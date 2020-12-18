@@ -25,6 +25,7 @@ namespace SparqlQueryGraph::Nodes::SelectNodes {
         std::unordered_map<std::string, char> labelMap;
         std::vector<std::vector<char>> operands;
         std::vector<TripleVariable> selectVariables;
+        char next_label = 'a';
 
 
     protected:
@@ -41,7 +42,6 @@ namespace SparqlQueryGraph::Nodes::SelectNodes {
         void generateOperands() {
             //ToDo double check
             std::vector<std::vector<std::string>> stringOperands = this->generateStringOperands();
-            char next_label = 'a';
             for (auto &operandsVector: stringOperands) {
                 std::vector<char> localOperands;
                 for (auto &operand: operandsVector) {
@@ -87,7 +87,16 @@ namespace SparqlQueryGraph::Nodes::SelectNodes {
         std::vector<char> getSubscriptResult() {
             std::vector<char> subscriptResult;
             for (auto &var:selectVariables)
-                subscriptResult.push_back(labelMap[var.getName()]);
+            {
+                if(labelMap.find(var.getName())!=labelMap.end())
+                    subscriptResult.push_back(labelMap[var.getName()]);
+                //process the case if the select variable is not on the variables insude the query
+                else {
+                    labelMap[var.getName()] = next_label++;
+                    subscriptResult.push_back(labelMap[var.getName()]);
+                }
+
+            }
             return subscriptResult;
 
         }
