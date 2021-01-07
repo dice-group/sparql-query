@@ -9,7 +9,6 @@
 
 namespace SparqlQueryGraph::Nodes {
     class ICommandNode : public IQueryNode {
-    public:
 
 
     };
