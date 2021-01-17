@@ -9,8 +9,6 @@
 
 namespace Dice::sparql::Nodes::QueryNodes {
     class QueryNode : public Node {
-
-
     };
 }
 

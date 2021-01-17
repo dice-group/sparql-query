@@ -2,10 +2,10 @@
 
 #include <Dice/RDF/ParseTerm.hpp>
 
-#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/TriplePatternNode.hpp"
-#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/OptionalPatternNode.hpp"
 #include "Dice/sparql-query/Nodes/QueryNodes/GroupNode.hpp"
 #include "Dice/sparql-query/Nodes/QueryNodes/SelectNodes/DefaultSelectNode.hpp"
+#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/OptionalPatternNode.hpp"
+#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/TriplePatternNode.hpp"
 #include "Dice/sparql-query/Nodes/SolutionDecorator.hpp"
 
 using namespace Dice::sparql::Nodes::QueryNodes::SelectNodes;

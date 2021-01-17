@@ -8,6 +8,11 @@
 
 namespace Dice::sparql::Nodes::SolutionModifiers {
     class SolutionModifier {
+
+    public:
+        virtual std::vector<sparql::TriplePattern> modifyGetBgps(std::vector<sparql::TriplePattern>) = 0;
+
+        virtual std::vector<std::vector<std::string>> modifyGenerateStringOperands(std::vector<std::vector<std::string>>) = 0;
     };
 }// namespace Dice::sparql::Nodes::SolutionModifiers
 

@@ -10,39 +10,31 @@
 #include "Dice/sparql-query/Nodes/Node.hpp"
 #include "Dice/sparql-query/Nodes/SolutionModifiers/SolutionModifier.hpp"
 
-using namespace Dice::sparql::Nodes;
 
 namespace Dice::sparql::Nodes {
 
     /*
-     * This class is used to add additional behaviours to a query node in runtime. Each behaviour can be applied before or after the actual behaviour.
+     * This class is used to add modifications to a query node at runtime.
      */
     class SolutionDecorator : public Node {
     private:
         std::shared_ptr<Node> wrappee;
         std::shared_ptr<SolutionModifiers::SolutionModifier> modifier;
+
     public:
         SolutionDecorator(std::shared_ptr<Node> node, std::shared_ptr<SolutionModifiers::SolutionModifier> modifier) {
             wrappee = node;
             this->modifier = modifier;
+
         }
-
-//    SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {
-//        //ToDo : here the order of execution is defined ..need to be reviewd carfully for all types of modifiers and add another decoator type if needed
-//        SelectQueryResult queryResult= wrappee->execute(previousQueryResult);
-//        queryResult=queryModifier->modifyResult(queryResult);
-//        return queryResult;
-//    }
-
+        std::vector<sparql::TriplePattern> getBgps() override {
+            auto result=modifier->modifyGetBgps(wrappee->getBgps());
+            return result;
+        }
         std::vector<std::vector<std::string>> generateStringOperands() override {
-            //ToDo check the architecture to avoid this
-            return std::vector<std::vector<std::string>>{{""}};
-        }
-
-        std::vector<TriplePattern> getBgps() override {
-            //ToDo
-
+            auto result=modifier->modifyGenerateStringOperands(wrappee->generateStringOperands());
+            return result;
         }
     };
-}
-#endif //SPARQL_QUERY_SOLUTIONDECORATOR_HPP
+}// namespace Dice::sparql::Nodes
+#endif//SPARQL_QUERY_SOLUTIONDECORATOR_HPP
