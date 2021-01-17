@@ -19,9 +19,9 @@ namespace Dice::sparql::Nodes::QueryNodes::SpecialNodes {
             content = var;
         };
 
-        GraphPatternNode(std::shared_ptr<QueryNode> queryNode, rdf::URIRef iri) : SpecialNode(std::move(queryNode)){
-           content = iri
-         };
+        GraphPatternNode(std::shared_ptr<QueryNode> queryNode, rdf::URIRef iri) : SpecialNode(std::move(queryNode)) {
+            content = iri;
+        };
 
         std::vector<sparql::TriplePattern> getBgps() override {
             throw internal::Exceptions::NotImplementedException();

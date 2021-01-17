@@ -17,6 +17,10 @@
 #include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/GraphPatternNode.hpp"
 #include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/UnionPatternNode.hpp"
 
+#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/BindPatternNode.hpp"
+#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/FilterPatternNode.hpp"
+#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/InlinePatternNode.hpp"
+
 using namespace Dice::sparql::Nodes::QueryNodes::SelectNodes;
 using namespace Dice::sparql::Nodes::QueryNodes;
 using namespace Dice::sparql;
