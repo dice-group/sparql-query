@@ -2,7 +2,7 @@
 #ifndef SPARQL_QUERY_TRIPLEVARIABLE_HPP
 #define SPARQL_QUERY_TRIPLEVARIABLE_HPP
 
-namespace SparqlQueryGraph {
+namespace Dice::SPARQL {
     class TripleVariable {
     private:
         std::string name;

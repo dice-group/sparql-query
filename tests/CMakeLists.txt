@@ -11,7 +11,7 @@ conan_basic_setup()
 # add the exectutable for all tests
 add_executable(tests Tests.cpp)
 target_link_libraries(tests
-        sparql-queryGraph
+        sparql-query
         ${CONAN_LIBS}
         )
 set_property(TARGET tests PROPERTY CXX_STANDARD 17)

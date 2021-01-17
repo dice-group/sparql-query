@@ -1,13 +1,13 @@
 #include <gtest/gtest.h>
-#include <Dice/Sparql-Query/TriplePatternElement.hpp>
-#include "Dice/Sparql-Query/QueryNodes/leafNodes/TriplePatternNode.hpp"
-#include <Dice/Sparql-Query/QueryNodes/SpecialNodes/OptionalPatternNode.hpp>
-#include <Dice/Sparql-Query/QueryNodes/GroupNode.hpp>
-#include <Dice/Sparql-Query/QueryNodes/SelectNodes/DefaultSelectNode.hpp>
-#include <Dice/Sparql-Query/QueryNodes/SolutionDecorator.hpp>
+#include <Dice/sparql-query/TriplePatternElement.hpp>
+#include "Dice/sparql-query/QueryNodes/leafNodes/TriplePatternNode.hpp"
+#include <Dice/sparql-query/QueryNodes/SpecialNodes/OptionalPatternNode.hpp>
+#include <Dice/sparql-query/QueryNodes/GroupNode.hpp>
+#include <Dice/sparql-query/QueryNodes/SelectNodes/DefaultSelectNode.hpp>
+#include <Dice/sparql-query/QueryNodes/SolutionDecorator.hpp>
 
-using namespace SparqlQueryGraph::Nodes::SelectNodes;
-using namespace SparqlQueryGraph::Nodes::GraphNodes;
+using namespace Dice::SPARQL::Nodes::SelectNodes;
+using namespace Dice::SPARQL::Nodes::GraphNodes;
 
 TEST(subscriptGeneratingTests, basic1) {
     //creating 2 triple patterns and adding them into a node

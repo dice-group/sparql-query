@@ -9,7 +9,7 @@
 
 #include "TripleVariable.hpp"
 #include <Dice/rdf_parser/RDF/Term.hpp>
-namespace SparqlQueryGraph {
+namespace Dice::SPARQL {
     class TriplePatternElement {
     public:
         using VarOrTerm = std::variant<TripleVariable, rdf_parser::store::rdf::Term>;
