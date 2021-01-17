@@ -2,7 +2,7 @@ from conans import ConanFile, CMake
 
 
 class RDFParser(ConanFile):
-    name = "sparql-queryGraph"
+    name = "sparql-query"
     version = "0.9"
     author = "DICE Group <info@dice-research.org>"
     homepage = "https://github.com/dice-group/rdf-parser"

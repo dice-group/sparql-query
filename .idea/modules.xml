@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Sparql-Query.iml" filepath="$PROJECT_DIR$/.idea/Sparql-Query.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sparql-query.iml" filepath="$PROJECT_DIR$/.idea/sparql-query.iml" />
     </modules>
   </component>
 </project>
