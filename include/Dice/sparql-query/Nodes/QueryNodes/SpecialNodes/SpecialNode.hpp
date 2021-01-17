@@ -10,7 +10,7 @@
 
 #include "Dice/sparql-query/Nodes/QueryNodes/QueryNode.hpp"
 
-namespace Dice::SPARQL::Nodes::QueryNodes::SpecialNodes {
+namespace Dice::sparql::Nodes::QueryNodes::SpecialNodes {
     class SpecialNode : public QueryNode {
     protected:
         std::shared_ptr<QueryNode> node;

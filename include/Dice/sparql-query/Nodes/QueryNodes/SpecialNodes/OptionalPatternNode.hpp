@@ -7,7 +7,7 @@
 
 #include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/SpecialNode.hpp"
 
-namespace Dice::SPARQL::Nodes::QueryNodes::SpecialNodes {
+namespace Dice::sparql::Nodes::QueryNodes::SpecialNodes {
     class OptionalPatternNode : public SpecialNode {
     public:
 
@@ -25,7 +25,7 @@ namespace Dice::SPARQL::Nodes::QueryNodes::SpecialNodes {
             return operands;
         }
 
-        std::vector<TriplePatternElement> getBgps() override {
+        std::vector<TriplePattern> getBgps() override {
             return node->getBgps();
         }
 

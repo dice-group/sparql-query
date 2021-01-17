@@ -7,7 +7,7 @@
 
 #include "Dice/sparql-query/Nodes/QueryNodes/QueryNode.hpp"
 
-namespace Dice::SPARQL::Nodes::::QueryNodes{
+namespace Dice::sparql::Nodes::::QueryNodes{
 
     /*
      * This class represent a node with an empty behaviour
@@ -15,8 +15,8 @@ namespace Dice::SPARQL::Nodes::::QueryNodes{
      */
     class EmptyNode : public QueryNode {
     public:
-         std::vector<TriplePatternElement> getBgps() {
-             std::vector<TriplePatternElement> emptyBgps;
+         std::vector<TriplePattern> getBgps() {
+             std::vector<TriplePattern> emptyBgps;
              return emptyBgps;
          }
 

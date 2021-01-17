@@ -7,7 +7,7 @@
 
 #include "Dice/sparql-query/Nodes/Node.hpp"
 
-namespace Dice::SPARQL::Nodes::QueryNodes {
+namespace Dice::sparql::Nodes::QueryNodes {
     class QueryNode : public Node {
 
 

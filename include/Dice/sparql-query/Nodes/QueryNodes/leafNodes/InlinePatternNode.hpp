@@ -7,7 +7,7 @@
 
 #include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/LeafNode.hpp"
 
-namespace Dice::SPARQL::Nodes::QueryNodes::LeafNodes {
+namespace Dice::sparql::Nodes::QueryNodes::LeafNodes {
     class InlinePatternNode : public LeafNode {
     };
 }

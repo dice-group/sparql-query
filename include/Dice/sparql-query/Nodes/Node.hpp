@@ -7,14 +7,14 @@
 
 #include <vector>
 
-#include "Dice/sparql-query/TriplePatternElement.hpp"
+#include <Dice/SPARQL/TriplePattern.hpp>
 
-namespace Dice::SPARQL::Nodes{
+namespace Dice::sparql::Nodes{
 
 class Node {
 public:
 
-    virtual std::vector<TriplePatternElement> getBgps() = 0;
+    virtual std::vector<sparql::TriplePattern> getBgps() = 0;
 
     virtual std::vector<std::vector<std::string>> generateStringOperands() = 0;
 

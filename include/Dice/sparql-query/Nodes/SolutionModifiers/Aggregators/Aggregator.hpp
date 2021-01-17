@@ -7,7 +7,7 @@
 
 #include "Dice/sparql-query/Nodes/SolutionModifiers/SolutionModifier.hpp"
 
-namespace Dice::SPARQL::Nodes::SolutionModifiers::Aggregators {
+namespace Dice::sparql::Nodes::SolutionModifiers::Aggregators {
     class Aggregator : public SolutionModifier {
 
     };

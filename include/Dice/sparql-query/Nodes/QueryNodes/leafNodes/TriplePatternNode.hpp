@@ -8,39 +8,38 @@
 #include <vector>
 
 #include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/LeafNode.hpp"
-#include "Dice/sparql-query/TriplePatternElement.hpp"
 
 
-namespace Dice::SPARQL::Nodes::QueryNodes::LeafNodes {
+namespace Dice::sparql::Nodes::QueryNodes::LeafNodes {
 
     class TriplePatternNode : public LeafNode {
 
     private:
-        std::vector<TriplePatternElement> elements;
+        std::vector<TriplePattern> elements;
 
     public:
-        TriplePatternNode(std::vector<TriplePatternElement> elements) {
+        TriplePatternNode(std::vector<TriplePattern> elements) {
             this->elements = elements;
         }
 
 
         std::vector<std::vector<std::string>> generateStringOperands() override {
             std::vector<std::vector<std::string>> operands;
-            for (TriplePatternElement &element:elements) {
+            for (TriplePattern &element:elements) {
                 std::vector<std::string> patternOperands;
-                if (std::holds_alternative<TripleVariable>(element.getFirstElement()))
-                    patternOperands.push_back(std::get<TripleVariable>(element.getFirstElement()).getName());
-                if (std::holds_alternative<TripleVariable>(element.getSecondElement()))
-                    patternOperands.push_back(std::get<TripleVariable>(element.getSecondElement()).getName());
-                if (std::holds_alternative<TripleVariable>(element.getThirdElement()))
-                    patternOperands.push_back(std::get<TripleVariable>(element.getThirdElement()).getName());
+                if (std::holds_alternative<Variable>(element.subject()))
+                    patternOperands.push_back(std::get<Variable>(element.subject()).getName());
+                if (std::holds_alternative<Variable>(element.predicate()))
+                    patternOperands.push_back(std::get<Variable>(element.predicate()).getName());
+                if (std::holds_alternative<Variable>(element.object()))
+                    patternOperands.push_back(std::get<Variable>(element.object()).getName());
                 operands.push_back(patternOperands);
             }
 
             return operands;
         }
 
-        std::vector<TriplePatternElement> getBgps() override {
+        std::vector<TriplePattern> getBgps() override {
             return elements;
 
         }

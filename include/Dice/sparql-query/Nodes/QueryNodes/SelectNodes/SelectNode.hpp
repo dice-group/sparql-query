@@ -8,11 +8,11 @@
 #include <memory>
 #include <vector>
 
+#include <robin_hood.h>
 
 #include "Dice/sparql-query/Nodes/QueryNodes/QueryNode.hpp"
-#include "Dice/sparql-query/TripleVariable.hpp"
 
-namespace Dice::SPARQL::Nodes::QueryNodes::SelectNodes {
+namespace Dice::sparql::Nodes::QueryNodes::SelectNodes {
 
     enum SelectModifier {
         NONE,
@@ -24,10 +24,10 @@ namespace Dice::SPARQL::Nodes::QueryNodes::SelectNodes {
 
     private:
         std::shared_ptr<Node> node;
-        std::map<std::string, std::string> prefixes;
+        robin_hood::unordered_map<std::string, std::string> prefixes;
         std::unordered_map<std::string, char> labelMap;
         std::vector<std::vector<char>> operands;
-        std::vector<TripleVariable> selectVariables;
+        std::vector<Variable> selectVariables;
         char next_label = 'a';
 
 
@@ -64,21 +64,21 @@ namespace Dice::SPARQL::Nodes::QueryNodes::SelectNodes {
 
     public:
 
-        SelectNode(std::shared_ptr<Node> node, std::vector<TripleVariable> selectVariables) {
+        SelectNode(std::shared_ptr<Node> node, std::vector<Variable> selectVariables) {
             this->node = node;
             this->generateOperands();
             if (selectVariables.size() == 1 &&
-                (std::find(selectVariables.begin(), selectVariables.end(), TripleVariable("*")) !=
+                (std::find(selectVariables.begin(), selectVariables.end(), Variable("*")) !=
                  selectVariables.end())) {
                 for (auto &label_pair : labelMap)
-                    this->selectVariables.push_back(TripleVariable(label_pair.first));
+                    this->selectVariables.push_back(Variable(label_pair.first));
             } else
                 this->selectVariables = selectVariables;
 
         }
 
-        SelectNode(std::shared_ptr<Node> node, std::vector<TripleVariable> selectVariables,
-                   std::map<std::string, std::string> prefixes) : SelectNode(node, selectVariables) {
+        SelectNode(std::shared_ptr<Node> node, std::vector<Variable> selectVariables,
+                   robin_hood::unordered_map<std::string, std::string> prefixes) : SelectNode(node, selectVariables) {
             this->prefixes = prefixes;
         }
 
@@ -104,7 +104,7 @@ namespace Dice::SPARQL::Nodes::QueryNodes::SelectNodes {
 
         }
 
-        std::vector<TriplePatternElement> getBgps() {
+        std::vector<TriplePattern> getBgps() {
             return node->getBgps();
         }
 
@@ -112,15 +112,15 @@ namespace Dice::SPARQL::Nodes::QueryNodes::SelectNodes {
             return this->selectModifier;
         }
 
-        std::vector<TripleVariable> getSelectVariables() {
+        std::vector<Variable> getSelectVariables() {
             return selectVariables;
         }
 
-        std::map<std::string, std::string> getPrefixes() {
+        robin_hood::unordered_map<std::string, std::string> getPrefixes() {
             return this->prefixes;
         }
 
-        std::vector<TripleVariable> getVariables() {
+        std::vector<Variable> getVariables() {
             return selectVariables;
         }
 

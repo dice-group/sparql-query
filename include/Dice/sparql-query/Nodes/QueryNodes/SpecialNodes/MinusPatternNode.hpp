@@ -7,7 +7,7 @@
 
 #include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/SpecialNode.hpp"
 
-namespace Dice::SPARQL::Nodes::QueryNodes::SpecialNodes {
+namespace Dice::sparql::Nodes::QueryNodes::SpecialNodes {
     class MinusPatternNode : public SpecialNode {
     public:
 

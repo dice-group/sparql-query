@@ -7,18 +7,18 @@
 
 #include "Dice/sparql-query/Nodes/QueryNodes/SelectNodes/SelectNode.hpp"
 
-namespace Dice::SPARQL::Nodes::QueryNodes::SelectNodes {
+namespace Dice::sparql::Nodes::QueryNodes::SelectNodes {
     class DistinctSelectNode : public SelectNode {
 
 
     public:
-        DistinctSelectNode(std::shared_ptr<Node> node, std::vector<TripleVariable> selectVariables)
+        DistinctSelectNode(std::shared_ptr<Node> node, std::vector<Variable> selectVariables)
                 : SelectNode(node, selectVariables) {
             this->selectModifier = SelectModifier::DISTINCT;
         }
 
-        DistinctSelectNode(std::shared_ptr<Node> node, std::vector<TripleVariable> selectVariables,
-                           std::map<std::string, std::string> prefixes) : SelectNode(node, selectVariables,
+        DistinctSelectNode(std::shared_ptr<Node> node, std::vector<Variable> selectVariables,
+                           robin_hood::unordered_map<std::string, std::string> prefixes) : SelectNode(node, selectVariables,
                                                                                      prefixes) {
             this->selectModifier = SelectModifier::DISTINCT;
         }

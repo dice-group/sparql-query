@@ -6,9 +6,9 @@
 #define SPARQL_QUERY_SOLUTIONMODIFIER_HPP
 
 
-namespace Dice::SPARQL::Nodes::SolutionModifiers {
+namespace Dice::sparql::Nodes::SolutionModifiers {
     class SolutionModifier {
     };
-}// namespace Dice::SPARQL::Nodes::SolutionModifiers
+}// namespace Dice::sparql::Nodes::SolutionModifiers
 
 #endif//SPARQL_QUERY_SOLUTIONMODIFIER_HPP

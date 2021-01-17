@@ -7,17 +7,17 @@
 
 #include "Dice/sparql-query/Nodes/QueryNodes/SelectNodes/SelectNode.hpp"
 
-namespace Dice::SPARQL::Nodes::QueryNodes::SelectNodes {
+namespace Dice::sparql::Nodes::QueryNodes::SelectNodes {
     class DefaultSelectNode : public SelectNode {
 
     public:
-        DefaultSelectNode(std::shared_ptr<Node> node, std::vector<TripleVariable> selectVariables)
+        DefaultSelectNode(std::shared_ptr<Node> node, std::vector<Variable> selectVariables)
                 : SelectNode(node, selectVariables) {
             this->selectModifier = SelectModifier::NONE;
         }
 
-        DefaultSelectNode(std::shared_ptr<Node> node, std::vector<TripleVariable> selectVariables,
-                          std::map<std::string, std::string> prefixes) : SelectNode(node, selectVariables,
+        DefaultSelectNode(std::shared_ptr<Node> node, std::vector<Variable> selectVariables,
+                          robin_hood::unordered_map<std::string, std::string> prefixes) : SelectNode(node, selectVariables,
                                                                                     prefixes) {
             this->selectModifier = SelectModifier::NONE;
         }

@@ -10,7 +10,7 @@
 
 #include "Dice/sparql-query/Nodes/QueryNodes/QueryNode.hpp"
 
-namespace Dice::SPARQL::Nodes::QueryNodes {
+namespace Dice::sparql::Nodes::QueryNodes {
     class GroupNode : public QueryNode {
     protected:
         //ToDo find the best collection to use here(vector,list....)
@@ -34,10 +34,10 @@ namespace Dice::SPARQL::Nodes::QueryNodes {
             return operands;
         }
 
-        std::vector<TriplePatternElement> getBgps() override {
-            std::vector<TriplePatternElement> bgps;
+        std::vector<TriplePattern> getBgps() override {
+            std::vector<TriplePattern> bgps;
             for (auto &child:children) {
-                std::vector<TriplePatternElement> childBgps = child->getBgps();
+                std::vector<TriplePattern> childBgps = child->getBgps();
                 for (auto &elements:childBgps)
                     bgps.push_back(elements);
             }

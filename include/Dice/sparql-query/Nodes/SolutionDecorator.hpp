@@ -10,9 +10,13 @@
 #include "Dice/sparql-query/Nodes/Node.hpp"
 #include "Dice/sparql-query/Nodes/SolutionModifiers/SolutionModifier.hpp"
 
-using namespace Dice::SPARQL::Nodes;
+using namespace Dice::sparql::Nodes;
 
-namespace Dice::SPARQL::Nodes {
+namespace Dice::sparql::Nodes {
+
+    /*
+     * This class is used to add additional behaviours to a query node in runtime. Each behaviour can be applied before or after the actual behaviour.
+     */
     class SolutionDecorator : public Node {
     private:
         std::shared_ptr<Node> wrappee;
@@ -35,7 +39,7 @@ namespace Dice::SPARQL::Nodes {
             return std::vector<std::vector<std::string>>{{""}};
         }
 
-        std::vector<TriplePatternElement> getBgps() override {
+        std::vector<TriplePattern> getBgps() override {
             //ToDo
 
         }

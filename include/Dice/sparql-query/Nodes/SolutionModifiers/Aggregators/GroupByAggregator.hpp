@@ -7,7 +7,7 @@
 
 #include "Dice/sparql-query/Nodes/SolutionModifiers/Aggregators/Aggregator.hpp"
 
-namespace Dice::SPARQL::Nodes::SolutionModifiers::Aggregators {
+namespace Dice::sparql::Nodes::SolutionModifiers::Aggregators {
     class GroupByAggregator : public Aggregator {
 
     };

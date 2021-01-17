@@ -17,7 +17,7 @@ target_include_directories(sparql-query INTERFACE
         )
 
 # require C++17
-target_compile_features(sparql-query INTERFACE cxx_std_17)
+target_compile_features(sparql-query INTERFACE cxx_std_20)
 
 # Make package findable
 configure_file(cmake/dummy-config.cmake.in sparql-query-config.cmake @ONLY)

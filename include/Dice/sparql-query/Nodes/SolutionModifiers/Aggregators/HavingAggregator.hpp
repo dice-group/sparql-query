@@ -7,7 +7,7 @@
 
 #include "Dice/sparql-query/Nodes/SolutionModifiers/Aggregators/Aggregator.hpp"
 
-namespace SparqlQuDice::SPARQLeryGraph::Nodes::SolutionModifiers::Aggregators {
+namespace SparqlQuDice::sparqleryGraph::Nodes::SolutionModifiers::Aggregators {
     class HavingAggregator : public Aggregator {
 
     };

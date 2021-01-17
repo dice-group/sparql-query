@@ -8,7 +8,7 @@
 
 #include "Dice/sparql-query/Nodes/SolutionModifiers/SolutionModifier.hpp"
 
-Dice::SPARQL::Nodes::SolutionModifiers {
+Dice::sparql::Nodes::SolutionModifiers {
     class OffsetModifier : public SolutionModifier {
     };
 }

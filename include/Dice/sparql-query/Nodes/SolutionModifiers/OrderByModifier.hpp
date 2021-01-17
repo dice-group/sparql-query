@@ -8,9 +8,9 @@
 
 #include "Dice/sparql-query/Nodes/SolutionModifiers/SolutionModifier.hpp"
 
-namespace Dice::SPARQL::Nodes::SolutionModifiers {
+namespace Dice::sparql::Nodes::SolutionModifiers {
     class OrderByModifier : public SolutionModifier {
     };
-}// namespace Dice::SPARQL::Nodes::SolutionModifiers
+}// namespace Dice::sparql::Nodes::SolutionModifiers
 
 #endif//SPARQL_QUERY_ORDERBYMODIFIER_HPP
