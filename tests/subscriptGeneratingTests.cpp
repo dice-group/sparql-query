@@ -8,6 +8,15 @@
 #include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/TriplePatternNode.hpp"
 #include "Dice/sparql-query/Nodes/SolutionDecorator.hpp"
 
+#include "Dice/sparql-query/Nodes/SolutionModifiers/LimitModifier.hpp"
+#include "Dice/sparql-query/Nodes/SolutionModifiers/OffsetModifier.hpp"
+#include "Dice/sparql-query/Nodes/SolutionModifiers/OrderByModifier.hpp"
+
+#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/MinusPatternNode.hpp"
+#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/ServicePatternNode.hpp"
+#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/GraphPatternNode.hpp"
+#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/UnionPatternNode.hpp"
+
 using namespace Dice::sparql::Nodes::QueryNodes::SelectNodes;
 using namespace Dice::sparql::Nodes::QueryNodes;
 using namespace Dice::sparql;

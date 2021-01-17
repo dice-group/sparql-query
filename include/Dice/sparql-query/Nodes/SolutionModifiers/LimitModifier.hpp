@@ -6,9 +6,17 @@
 #define SPARQL_QUERY_LIMITMODIFIER_HPP
 
 #include "Dice/sparql-query/Nodes/SolutionModifiers/SolutionModifier.hpp"
+#include "Dice/sparql-query/Exceptions/NotImplementedException.hpp"
 
-Dice::sparql::Nodes::SolutionModifiers {
+namespace Dice::sparql::Nodes::SolutionModifiers {
     class LimitModifier : public SolutionModifier {
+    public:
+        std::vector<sparql::TriplePattern> modifyGetBgpsResult(std::vector<sparql::TriplePattern> vector) override {
+                throw internal::Exceptions::NotImplementedException();
+        }
+        std::vector<std::vector<std::string>> modifyGenerateStringOperandsResult(std::vector<std::vector<std::string>> vector) override {
+            throw internal::Exceptions::NotImplementedException();
+        }
     };
 }
 

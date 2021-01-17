@@ -28,11 +28,11 @@ namespace Dice::sparql::Nodes {
 
         }
         std::vector<sparql::TriplePattern> getBgps() override {
-            auto result=modifier->modifyGetBgps(wrappee->getBgps());
+            auto result=modifier->modifyGetBgpsResult(wrappee->getBgps());
             return result;
         }
         std::vector<std::vector<std::string>> generateStringOperands() override {
-            auto result=modifier->modifyGenerateStringOperands(wrappee->generateStringOperands());
+            auto result=modifier->modifyGenerateStringOperandsResult(wrappee->generateStringOperands());
             return result;
         }
     };

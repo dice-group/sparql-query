@@ -10,6 +10,12 @@
 
 namespace Dice::sparql::Nodes::SolutionModifiers {
     class OrderByModifier : public SolutionModifier {
+        std::vector<sparql::TriplePattern> modifyGetBgpsResult(std::vector<sparql::TriplePattern> vector) override {
+            throw internal::Exceptions::NotImplementedException();
+        }
+        std::vector<std::vector<std::string>> modifyGenerateStringOperandsResult(std::vector<std::vector<std::string>> vector) override {
+            throw internal::Exceptions::NotImplementedException();
+        }
     };
 }// namespace Dice::sparql::Nodes::SolutionModifiers
 
