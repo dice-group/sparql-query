@@ -13,11 +13,11 @@
 namespace Dice::SPARQL::Nodes::QueryNodes::SpecialNodes {
     class SpecialNode : public QueryNode {
     protected:
-        std::shared_ptr<ICommandNode> node;
+        std::shared_ptr<QueryNode> node;
 
     public:
-        SpecialNode(std::shared_ptr<ICommandNode> commandnode) {
-            node = commandnode;
+        SpecialNode(std::shared_ptr<QueryNode> queryNode) {
+            node = queryNode;
         }
     };
 }

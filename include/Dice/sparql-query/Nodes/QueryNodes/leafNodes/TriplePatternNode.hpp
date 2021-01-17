@@ -8,7 +8,7 @@
 #include <vector>
 
 #include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/LeafNode.hpp"
-#include "Dice/Sparql-Query/TriplePatternElement.hpp"
+#include "Dice/sparql-query/TriplePatternElement.hpp"
 
 
 namespace Dice::SPARQL::Nodes::QueryNodes::LeafNodes {

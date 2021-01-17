@@ -11,7 +11,7 @@ namespace Dice::SPARQL::Nodes::QueryNodes::SpecialNodes {
     class OptionalPatternNode : public SpecialNode {
     public:
 
-        OptionalPatternNode(std::shared_ptr<ICommandNode> commandnode) : SpecialNode(commandnode) {};
+        OptionalPatternNode(std::shared_ptr<QueryNode> queryNode) : SpecialNode(queryNode) {};
 
 
         std::vector<std::vector<std::string>> generateStringOperands() override {

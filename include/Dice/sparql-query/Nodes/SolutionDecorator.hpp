@@ -15,12 +15,12 @@ using namespace Dice::SPARQL::Nodes;
 namespace Dice::SPARQL::Nodes {
     class SolutionDecorator : public Node {
     private:
-        std::shared_ptr<IQueryNode> wrappee;
-        std::shared_ptr<ISolutionModifier> queryModifier;
+        std::shared_ptr<Node> wrappee;
+        std::shared_ptr<SolutionModifiers::SolutionModifier> modifier;
     public:
-        SolutionDecorator(std::shared_ptr<IQueryNode> queryNode, std::shared_ptr<ISolutionModifier> queryModifier) {
-            wrappee = queryNode;
-            this->queryModifier = queryModifier;
+        SolutionDecorator(std::shared_ptr<Node> node, std::shared_ptr<SolutionModifiers::SolutionModifier> modifier) {
+            wrappee = node;
+            this->modifier = modifier;
         }
 
 //    SelectQueryResult execute(const SelectQueryResult& previousQueryResult) override {

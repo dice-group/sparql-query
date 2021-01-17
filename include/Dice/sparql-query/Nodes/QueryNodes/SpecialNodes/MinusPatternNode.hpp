@@ -11,7 +11,7 @@ namespace Dice::SPARQL::Nodes::QueryNodes::SpecialNodes {
     class MinusPatternNode : public SpecialNode {
     public:
 
-        MinusPatternNode(std::shared_ptr<ICommandNode> commandnode) : SpecialNode(commandnode) {};
+        MinusPatternNode(std::shared_ptr<QueryNode> queryNode) : SpecialNode(queryNode) {};
 
     };
 }

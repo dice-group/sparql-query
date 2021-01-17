@@ -14,12 +14,12 @@ namespace Dice::SPARQL::Nodes::QueryNodes {
     class GroupNode : public QueryNode {
     protected:
         //ToDo find the best collection to use here(vector,list....)
-        std::vector<std::shared_ptr<ICommandNode>> children;
+        std::vector<std::shared_ptr<QueryNode>> children;
 
     public:
 
-        void addChild(std::shared_ptr<ICommandNode> commandnode) {
-            children.push_back(commandnode);
+        void addChild(std::shared_ptr<QueryNode> queryNode) {
+            children.push_back(queryNode);
         }
 
 

@@ -12,7 +12,8 @@
 #include "Dice/sparql-query/Nodes/QueryNodes/QueryNode.hpp"
 #include "Dice/sparql-query/TripleVariable.hpp"
 
-namespace Dice::SPARQL::Nodes::SelectNodes {
+namespace Dice::SPARQL::Nodes::QueryNodes::SelectNodes {
+
     enum SelectModifier {
         NONE,
         DISTINCT,
@@ -22,7 +23,7 @@ namespace Dice::SPARQL::Nodes::SelectNodes {
     class SelectNode : public QueryNode {
 
     private:
-        std::shared_ptr<IQueryNode> queryNode;
+        std::shared_ptr<Node> node;
         std::map<std::string, std::string> prefixes;
         std::unordered_map<std::string, char> labelMap;
         std::vector<std::vector<char>> operands;
@@ -37,7 +38,7 @@ namespace Dice::SPARQL::Nodes::SelectNodes {
     private:
 
         std::vector<std::vector<std::string>> generateStringOperands() override {
-            return queryNode->generateStringOperands();
+            return node->generateStringOperands();
 
         }
 
@@ -63,8 +64,8 @@ namespace Dice::SPARQL::Nodes::SelectNodes {
 
     public:
 
-        SelectNode(std::shared_ptr<IQueryNode> queryNode, std::vector<TripleVariable> selectVariables) {
-            this->queryNode = queryNode;
+        SelectNode(std::shared_ptr<Node> node, std::vector<TripleVariable> selectVariables) {
+            this->node = node;
             this->generateOperands();
             if (selectVariables.size() == 1 &&
                 (std::find(selectVariables.begin(), selectVariables.end(), TripleVariable("*")) !=
@@ -76,8 +77,8 @@ namespace Dice::SPARQL::Nodes::SelectNodes {
 
         }
 
-        SelectNode(std::shared_ptr<IQueryNode> queryNode, std::vector<TripleVariable> selectVariables,
-                   std::map<std::string, std::string> prefixes) : SelectNode(queryNode, selectVariables) {
+        SelectNode(std::shared_ptr<Node> node, std::vector<TripleVariable> selectVariables,
+                   std::map<std::string, std::string> prefixes) : SelectNode(node, selectVariables) {
             this->prefixes = prefixes;
         }
 
@@ -104,7 +105,7 @@ namespace Dice::SPARQL::Nodes::SelectNodes {
         }
 
         std::vector<TriplePatternElement> getBgps() {
-            return queryNode->getBgps();
+            return node->getBgps();
         }
 
         SelectModifier getSelectModifier() {
