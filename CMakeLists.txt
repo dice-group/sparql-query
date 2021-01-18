@@ -40,8 +40,8 @@ install(DIRECTORY include/ DESTINATION ${sparql-query_INSTALL_INCLUDE_DIR})
 
 
 # testing
-option(sparql-Query_BUILD_TESTS "Build sparql-Query tests." ON)
-#if(sparql-Query_BUILD_TESTS)
+option(sparql-Query_BUILD_TESTS "Build sparql-Query tests." OFF)
+if(sparql-Query_BUILD_TESTS)
     enable_testing()
     add_subdirectory(tests)
-#endif()
+endif()

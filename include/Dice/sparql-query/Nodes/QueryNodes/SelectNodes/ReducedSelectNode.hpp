@@ -18,7 +18,7 @@ namespace Dice::sparql::Nodes::QueryNodes::SelectNodes {
         }
 
         ReducedSelectNode(std::shared_ptr<Node> node, std::vector<Variable> selectVariables,
-                          robin_hood::unordered_map<std::string, std::string> prefixes) : SelectNode(queryNode, selectVariables,
+                          robin_hood::unordered_map<std::string, std::string> prefixes) : SelectNode(node, selectVariables,
                                                                                     prefixes) {
             this->selectModifier = SelectModifier::REDUCE;
         }

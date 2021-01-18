@@ -7,7 +7,7 @@
 
 #include "Dice/sparql-query/Nodes/QueryNodes/QueryNode.hpp"
 
-namespace Dice::sparql::Nodes::::QueryNodes{
+namespace Dice::sparql::Nodes::QueryNodes{
 
     /*
      * This class represent a node with an empty behaviour
