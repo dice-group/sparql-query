@@ -1,4 +1,6 @@
-from conans import ConanFile, CMake
+import re, os
+from conans.tools import load
+from conans import ConanFile, CMake, tools
 
 
 class RDFParser(ConanFile):
