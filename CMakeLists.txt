@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(sparql-query VERSION 0.9.0)
+project(sparql-query VERSION 0.11.0)
 set(CMAKE_CXX_STANDARD 17)
 
 # installation directories
