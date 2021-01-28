@@ -1,0 +1,6 @@
+#include <array>
+
+namespace Dice::sparql_query {
+
+    inline constexpr std::array<unsigned int, 3> version = {@sparql-query_VERSION_MAJOR@, @sparql-query_VERSION_MINOR@, @sparql-query_VERSION_PATCH@};
+}
