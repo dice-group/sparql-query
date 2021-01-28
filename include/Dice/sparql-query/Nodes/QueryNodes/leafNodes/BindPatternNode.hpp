@@ -1,12 +1,10 @@
-//
-// Created by fakhr on 18.02.20.
-//
-
 #ifndef SPARQL_QUERY_BINDPATTERNNODE_HPP
 #define SPARQL_QUERY_BINDPATTERNNODE_HPP
 
-#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/LeafNode.hpp"
+#include <utility>
+
 #include "Dice/sparql-query/Exceptions/NotImplementedException.hpp"
+#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/LeafNode.hpp"
 
 namespace Dice::sparql::Nodes::QueryNodes::LeafNodes {
 
@@ -17,7 +15,7 @@ namespace Dice::sparql::Nodes::QueryNodes::LeafNodes {
         Variable var;
 
     public:
-        BindPatternNode(std::string expression, Variable var) : expression(expression), var(var) {}
+        BindPatternNode(std::string expression, Variable var) : expression(std::move(expression)), var(std::move(var)) {}
 
         std::vector<sparql::TriplePattern> getBgps() override {
             throw internal::Exceptions::NotImplementedException();

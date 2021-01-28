@@ -52,7 +52,7 @@ install(DIRECTORY include/ DESTINATION ${sparql-query_INSTALL_INCLUDE_DIR})
 
 # testing
 option(SPARQL_QUERY_BUILD_TESTS "Build sparql-Query tests." OFF)
-if(SPARQL_QUERY_BUILD_TESTS)
+if (SPARQL_QUERY_BUILD_TESTS)
     enable_testing()
     add_subdirectory(tests)
-endif()
+endif ()

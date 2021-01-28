@@ -5,13 +5,14 @@
 #ifndef SPARQL_QUERY_OPTIONALPATTERNNODE_HPP
 #define SPARQL_QUERY_OPTIONALPATTERNNODE_HPP
 
+#include <utility>
+
 #include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/SpecialNode.hpp"
 
 namespace Dice::sparql::Nodes::QueryNodes::SpecialNodes {
     class OptionalPatternNode : public SpecialNode {
     public:
-
-        OptionalPatternNode(std::shared_ptr<QueryNode> queryNode) : SpecialNode(queryNode) {};
+        explicit OptionalPatternNode(std::shared_ptr<QueryNode> queryNode) : SpecialNode(std::move(queryNode)){};
 
 
         std::vector<std::vector<std::string>> generateStringOperands() override {
@@ -28,7 +29,6 @@ namespace Dice::sparql::Nodes::QueryNodes::SpecialNodes {
         std::vector<TriplePattern> getBgps() override {
             return node->getBgps();
         }
-
     };
-}
-#endif //SPARQL_QUERY_OPTIONALPATTERNNODE_HPP
+}// namespace Dice::sparql::Nodes::QueryNodes::SpecialNodes
+#endif//SPARQL_QUERY_OPTIONALPATTERNNODE_HPP

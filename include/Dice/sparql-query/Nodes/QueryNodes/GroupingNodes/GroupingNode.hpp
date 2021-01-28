@@ -1,7 +1,3 @@
-//
-// Created by fakhr on 12.02.20.
-//
-
 #ifndef SPARQL_QUERY_GROUPINGNODE_HPP
 #define SPARQL_QUERY_GROUPINGNODE_HPP
 
@@ -13,11 +9,11 @@
 namespace Dice::sparql::Nodes::QueryNodes::GroupingNodes {
     class GroupingNode : public QueryNode {
     protected:
-        //ToDo find the best collection to use here(vector,list....)
+        // todo: find the best collection to use here(vector,list....)
         std::vector<std::shared_ptr<QueryNode>> children;
 
     public:
-        void addChild(std::shared_ptr<QueryNode> queryNode) {
+        void addChild(const std::shared_ptr<QueryNode> &queryNode) {
             children.push_back(queryNode);
         }
     };

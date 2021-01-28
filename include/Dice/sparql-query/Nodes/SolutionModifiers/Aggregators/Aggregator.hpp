@@ -1,7 +1,3 @@
-//
-// Created by fakhr on 12.02.20.
-//
-
 #ifndef SPARQL_QUERY_AGGREGATOR_HPP
 #define SPARQL_QUERY_AGGREGATOR_HPP
 
@@ -9,8 +5,7 @@
 
 namespace Dice::sparql::Nodes::SolutionModifiers::Aggregators {
     class Aggregator : public SolutionModifier {
-
     };
-}
+}// namespace Dice::sparql::Nodes::SolutionModifiers::Aggregators
 
-#endif //SPARQL_QUERY_AGGREGATOR_HPP
+#endif//SPARQL_QUERY_AGGREGATOR_HPP

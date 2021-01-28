@@ -1,7 +1,3 @@
-//
-// Created by fakhr on 22.01.21.
-//
-
 #ifndef SPARQL_QUERY_REGULARGROUPINGNODE_HPP
 #define SPARQL_QUERY_REGULARGROUPINGNODE_HPP
 
@@ -24,11 +20,9 @@ namespace Dice::sparql::Nodes::QueryNodes::GroupingNodes {
 
         std::vector<TriplePattern> getBgps() override {
             std::vector<TriplePattern> bgps;
-            for (auto &child : children) {
-                std::vector<TriplePattern> childBgps = child->getBgps();
-                for (auto &elements : childBgps)
-                    bgps.push_back(elements);
-            }
+            for (auto &child : children)
+                for (auto &bgp : child->getBgps())
+                    bgps.push_back(bgp);
 
             return bgps;
         }

@@ -1,10 +1,8 @@
-//
-// Created by fakhr on 22.01.21.
-//
-
 #ifndef SPARQL_QUERY_FILTERINGDECORATOR_HPP
 #define SPARQL_QUERY_FILTERINGDECORATOR_HPP
 
+
+#include <utility>
 
 #include "Dice/sparql-query/Nodes/QueryNodes/GroupingNodes/GroupingDecorator.hpp"
 
@@ -20,8 +18,8 @@ namespace Dice::sparql::Nodes::QueryNodes::GroupingNodes {
         std::string constraint;
 
     public:
-        FilteringDecorator(std::shared_ptr<GroupingNode> wrappee,std::string constraint) : GroupingDecorator(wrappee) {
-            this->constraint = constraint;
+        FilteringDecorator(std::shared_ptr<GroupingNode> wrappee, std::string constraint) : GroupingDecorator(std::move(wrappee)) {
+            this->constraint = std::move(constraint);
         }
 
         std::vector<std::vector<std::string>> generateStringOperands() override {

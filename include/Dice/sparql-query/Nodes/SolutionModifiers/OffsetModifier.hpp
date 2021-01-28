@@ -1,13 +1,9 @@
-//
-// Created by fakhr on 13.02.20.
-//
-
 #ifndef SPARQL_QUERY_OFFSETMODIFIER_HPP
 #define SPARQL_QUERY_OFFSETMODIFIER_HPP
 
 
-#include "Dice/sparql-query/Nodes/SolutionModifiers/SolutionModifier.hpp"
 #include "Dice/sparql-query/Exceptions/NotImplementedException.hpp"
+#include "Dice/sparql-query/Nodes/SolutionModifiers/SolutionModifier.hpp"
 
 namespace Dice::sparql::Nodes::SolutionModifiers {
     class OffsetModifier : public SolutionModifier {
@@ -19,6 +15,6 @@ namespace Dice::sparql::Nodes::SolutionModifiers {
             throw internal::Exceptions::NotImplementedException();
         }
     };
-}
+}// namespace Dice::sparql::Nodes::SolutionModifiers
 
 #endif//SPARQL_QUERY_OFFSETMODIFIER_HPP

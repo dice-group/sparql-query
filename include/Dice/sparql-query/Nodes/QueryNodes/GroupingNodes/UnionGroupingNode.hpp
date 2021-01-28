@@ -1,7 +1,3 @@
-//
-// Created by fakhr on 18.02.20.
-//
-
 #ifndef SPARQL_QUERY_UNIONGROUPINGNODE_HPP
 #define SPARQL_QUERY_UNIONGROUPINGNODE_HPP
 

@@ -1,7 +1,3 @@
-//
-// Created by fakhr on 17.01.21.
-//
-
 #ifndef SPARQL_QUERY_SERVICEPATTERNNODE_HPP
 #define SPARQL_QUERY_SERVICEPATTERNNODE_HPP
 

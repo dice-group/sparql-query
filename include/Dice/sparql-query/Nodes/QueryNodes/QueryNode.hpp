@@ -1,7 +1,3 @@
-//
-// Created by fakhr on 13.02.20.
-//
-
 #ifndef SPARQL_QUERY_ICOMMANDNODE_HPP
 #define SPARQL_QUERY_ICOMMANDNODE_HPP
 
@@ -10,6 +6,6 @@
 namespace Dice::sparql::Nodes::QueryNodes {
     class QueryNode : public Node {
     };
-}
+}// namespace Dice::sparql::Nodes::QueryNodes
 
-#endif //SPARQL_QUERY_ICOMMANDNODE_HPP
+#endif//SPARQL_QUERY_ICOMMANDNODE_HPP

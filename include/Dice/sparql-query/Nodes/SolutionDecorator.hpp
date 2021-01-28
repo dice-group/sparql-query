@@ -25,14 +25,13 @@ namespace Dice::sparql::Nodes {
         SolutionDecorator(std::shared_ptr<Node> node, std::shared_ptr<SolutionModifiers::SolutionModifier> modifier) {
             wrappee = node;
             this->modifier = modifier;
-
         }
         std::vector<sparql::TriplePattern> getBgps() override {
-            auto result=modifier->modifyGetBgpsResult(wrappee->getBgps());
+            auto result = modifier->modifyGetBgpsResult(wrappee->getBgps());
             return result;
         }
         std::vector<std::vector<std::string>> generateStringOperands() override {
-            auto result=modifier->modifyGenerateStringOperandsResult(wrappee->generateStringOperands());
+            auto result = modifier->modifyGenerateStringOperandsResult(wrappee->generateStringOperands());
             return result;
         }
     };

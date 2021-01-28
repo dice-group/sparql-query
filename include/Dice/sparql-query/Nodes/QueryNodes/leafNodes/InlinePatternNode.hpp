@@ -1,9 +1,7 @@
-//
-// Created by fakhr on 18.02.20.
-//
-
 #ifndef SPARQL_QUERY_INLINEPATTERNNODE_HPP
 #define SPARQL_QUERY_INLINEPATTERNNODE_HPP
+
+#include <utility>
 
 #include "Dice/sparql-query/Exceptions/NotImplementedException.hpp"
 #include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/LeafNode.hpp"
@@ -16,7 +14,7 @@ namespace Dice::sparql::Nodes::QueryNodes::LeafNodes {
         std::string dataBlock;
 
     public:
-        InlinePatternNode(std::string dataBlock) : dataBlock(dataBlock) {}
+        explicit InlinePatternNode(std::string dataBlock) : dataBlock(std::move(dataBlock)) {}
 
         std::vector<sparql::TriplePattern> getBgps() override {
             throw internal::Exceptions::NotImplementedException();

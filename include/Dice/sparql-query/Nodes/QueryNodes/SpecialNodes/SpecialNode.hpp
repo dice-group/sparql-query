@@ -1,12 +1,9 @@
-//
-// Created by fakhr on 12.02.20.
-//
-
 #ifndef SPARQL_QUERY_SPECIALNODE_HPP
 #define SPARQL_QUERY_SPECIALNODE_HPP
 
-#include <vector>
 #include <memory>
+#include <utility>
+#include <vector>
 
 #include "Dice/sparql-query/Nodes/QueryNodes/QueryNode.hpp"
 
@@ -16,9 +13,9 @@ namespace Dice::sparql::Nodes::QueryNodes::SpecialNodes {
         std::shared_ptr<QueryNode> node;
 
     public:
-        SpecialNode(std::shared_ptr<QueryNode> queryNode) {
-            node = queryNode;
+        explicit SpecialNode(std::shared_ptr<QueryNode> queryNode) {
+            node = std::move(queryNode);
         }
     };
-}
-#endif //SPARQL_QUERY_SPECIALNODE_HPP
+}// namespace Dice::sparql::Nodes::QueryNodes::SpecialNodes
+#endif//SPARQL_QUERY_SPECIALNODE_HPP

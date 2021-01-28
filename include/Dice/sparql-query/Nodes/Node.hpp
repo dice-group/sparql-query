@@ -1,7 +1,3 @@
-//
-// Created by fakhr on 13.02.20.
-//
-
 #ifndef SPARQL_QUERY_NODE_HPP
 #define SPARQL_QUERY_NODE_HPP
 
@@ -17,6 +13,6 @@ namespace Dice::sparql::Nodes {
 
         virtual std::vector<std::vector<std::string>> generateStringOperands() = 0;
     };
-}
+}// namespace Dice::sparql::Nodes
 
-#endif //SPARQL_QUERY_NODE_HPP
+#endif//SPARQL_QUERY_NODE_HPP

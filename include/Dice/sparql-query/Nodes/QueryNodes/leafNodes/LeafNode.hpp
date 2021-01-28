@@ -1,7 +1,3 @@
-//
-// Created by fakhr on 12.02.20.
-//
-
 #ifndef SPARQL_QUERY_LEAFNODE_HPP
 #define SPARQL_QUERY_LEAFNODE_HPP
 
@@ -9,8 +5,7 @@
 
 namespace Dice::sparql::Nodes::QueryNodes::LeafNodes {
     class LeafNode : public QueryNode {
-
     };
-}
+}// namespace Dice::sparql::Nodes::QueryNodes::LeafNodes
 
-#endif //SPARQL_QUERY_LEAFNODE_HPP
+#endif//SPARQL_QUERY_LEAFNODE_HPP
