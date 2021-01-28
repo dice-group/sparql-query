@@ -32,7 +32,7 @@ using namespace Dice::sparql;
 using namespace Dice;
 
 TEST(Print_version, run) {
-    std::cout << "sparql-query version" << Dice::sparql_query::version[0] << "."
+    std::cout << "sparql-query version " << Dice::sparql_query::version[0] << "."
               << Dice::sparql_query::version[1] << "."
               << Dice::sparql_query::version[2]
               << std::endl;
