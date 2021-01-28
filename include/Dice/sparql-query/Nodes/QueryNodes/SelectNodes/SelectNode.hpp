@@ -1,7 +1,3 @@
-//
-// Created by fakhr on 12.02.20.
-//
-
 #ifndef SPARQL_QUERY_ABSTRACTSELECTNODE_HPP
 #define SPARQL_QUERY_ABSTRACTSELECTNODE_HPP
 
