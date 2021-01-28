@@ -1,25 +1,33 @@
 cmake_minimum_required(VERSION 3.12)
 project(sparql-query VERSION 0.11.0)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
+
+
+include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 
 # installation directories
 set(sparql-query_INSTALL_INCLUDE_DIR "include" CACHE STRING "The installation include directory")
 set(sparql-query_INSTALL_CMAKE_DIR "share/sparql-query/cmake" CACHE STRING "The installation cmake directory")
 
+find_package(rdf-parser REQUIRED)
 
 # define a header-only library
 add_library(sparql-query INTERFACE)
-add_library(Dice::sparql-query ALIAS sparql-query)
+add_library(sparql-query::sparql-query ALIAS sparql-query)
 
-configure_file(include/Dice/sparql-query/version.hpp.in
-        include/Dice/sparql-query/version.hpp)
+target_link_libraries(sparql-query INTERFACE
+        rdf-parser::rdf-parser
+        )
+
+configure_file(cmake/version.hpp.in
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/Dice/sparql-query/version.hpp)
 
 target_include_directories(sparql-query INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${sparql-query_INSTALL_CMAKE_DIR}>
         )
 
-# require C++17
+# require C++20
 target_compile_features(sparql-query INTERFACE cxx_std_20)
 
 # Make package findable
@@ -43,8 +51,8 @@ install(DIRECTORY include/ DESTINATION ${sparql-query_INSTALL_INCLUDE_DIR})
 
 
 # testing
-option(sparql-Query_BUILD_TESTS "Build sparql-Query tests." OFF)
-if(sparql-Query_BUILD_TESTS)
+option(SPARQL_QUERY_BUILD_TESTS "Build sparql-Query tests." OFF)
+if(SPARQL_QUERY_BUILD_TESTS)
     enable_testing()
     add_subdirectory(tests)
 endif()

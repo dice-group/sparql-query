@@ -1,3 +1,4 @@
+include/Dice/sparql-query/version.hpp
 
 # Created by https://www.toptal.com/developers/gitignore/api/c++,conan,jetbrains+all,cmake
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++,conan,jetbrains+all,cmake

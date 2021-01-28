@@ -3,25 +3,24 @@
 #include <Dice/RDF/ParseTerm.hpp>
 
 #include <Dice/sparql-query/version.hpp>
+#include <Dice/sparql-query/Nodes/QueryNodes/GroupingNodes/RegularGroupingNode.hpp>
+#include <Dice/sparql-query/Nodes/QueryNodes/SelectNodes/DefaultSelectNode.hpp>
+#include <Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/OptionalPatternNode.hpp>
+#include <Dice/sparql-query/Nodes/QueryNodes/leafNodes/TriplePatternNode.hpp>
+#include <Dice/sparql-query/Nodes/SolutionDecorator.hpp>
 
-#include "Dice/sparql-query/Nodes/QueryNodes/GroupNode.hpp"
-#include "Dice/sparql-query/Nodes/QueryNodes/SelectNodes/DefaultSelectNode.hpp"
-#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/OptionalPatternNode.hpp"
-#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/TriplePatternNode.hpp"
-#include "Dice/sparql-query/Nodes/SolutionDecorator.hpp"
+#include <Dice/sparql-query/Nodes/SolutionModifiers/LimitModifier.hpp>
+#include <Dice/sparql-query/Nodes/SolutionModifiers/OffsetModifier.hpp>
+#include <Dice/sparql-query/Nodes/SolutionModifiers/OrderByModifier.hpp>
 
-#include "Dice/sparql-query/Nodes/SolutionModifiers/LimitModifier.hpp"
-#include "Dice/sparql-query/Nodes/SolutionModifiers/OffsetModifier.hpp"
-#include "Dice/sparql-query/Nodes/SolutionModifiers/OrderByModifier.hpp"
+#include <Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/MinusPatternNode.hpp>
+#include <Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/ServicePatternNode.hpp>
+#include <Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/GraphPatternNode.hpp>
+#include <Dice/sparql-query/Nodes/QueryNodes/GroupingNodes/UnionGroupingNode.hpp>
 
-#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/MinusPatternNode.hpp"
-#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/ServicePatternNode.hpp"
-#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/GraphPatternNode.hpp"
-#include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/UnionPatternNode.hpp"
-
-#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/BindPatternNode.hpp"
-#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/FilterPatternNode.hpp"
-#include "Dice/sparql-query/Nodes/QueryNodes/leafNodes/InlinePatternNode.hpp"
+#include <Dice/sparql-query/Nodes/QueryNodes/leafNodes/BindPatternNode.hpp>
+#include <Dice/sparql-query/Nodes/QueryNodes/GroupingNodes/FilteringDecorator.hpp>
+#include <Dice/sparql-query/Nodes/QueryNodes/leafNodes/InlinePatternNode.hpp>
 
 using namespace Dice::sparql::Nodes::QueryNodes::SelectNodes;
 using namespace Dice::sparql::Nodes::QueryNodes;
@@ -46,7 +45,7 @@ TEST(subscriptGeneratingTests, basic1) {
     std::shared_ptr<LeafNodes::TriplePatternNode> triplePatternNode2=std::make_shared<LeafNodes::TriplePatternNode>(elements);
     std::shared_ptr<SpecialNodes::OptionalPatternNode> optionalNode1=std::make_shared<SpecialNodes::OptionalPatternNode>(triplePatternNode2);
     //group the 2 nodes
-    std::shared_ptr<GroupNode> groupNode=std::make_shared<GroupNode>();
+    std::shared_ptr<GroupingNodes::RegularGroupingNode> groupNode=std::make_shared<GroupingNodes::RegularGroupingNode>();
     groupNode->addChild(triplePatternNode);
     groupNode->addChild(optionalNode1);
     //

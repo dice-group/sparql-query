@@ -1,4 +1,4 @@
-#include<array>
+#include <array>
 
 namespace Dice::sparql_query {
 

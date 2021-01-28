@@ -17,7 +17,8 @@ add_executable(tests Tests.cpp)
 target_link_libraries(tests
         GTest::GTest
         GTest::Main
-        sparql-query
+        sparql-query::sparql-query
+        rdf-parser::rdf-parser
         )
 
 set_property(TARGET tests PROPERTY CXX_STANDARD 20)
