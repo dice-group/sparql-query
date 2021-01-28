@@ -11,6 +11,9 @@ set(sparql-query_INSTALL_CMAKE_DIR "share/sparql-query/cmake" CACHE STRING "The 
 add_library(sparql-query INTERFACE)
 add_library(Dice::sparql-query ALIAS sparql-query)
 
+configure_file(include/Dice/sparql-query/version.hpp.in
+        include/Dice/sparql-query/version.hpp)
+
 target_include_directories(sparql-query INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${sparql-query_INSTALL_CMAKE_DIR}>

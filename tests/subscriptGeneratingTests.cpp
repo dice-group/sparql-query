@@ -2,6 +2,8 @@
 
 #include <Dice/RDF/ParseTerm.hpp>
 
+#include <Dice/sparql-query/version.hpp>
+
 #include "Dice/sparql-query/Nodes/QueryNodes/GroupNode.hpp"
 #include "Dice/sparql-query/Nodes/QueryNodes/SelectNodes/DefaultSelectNode.hpp"
 #include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/OptionalPatternNode.hpp"
@@ -26,6 +28,12 @@ using namespace Dice::sparql::Nodes::QueryNodes;
 using namespace Dice::sparql;
 using namespace Dice;
 
+TEST(Print_version, run) {
+    std::cout << "sparql-query version" << Dice::sparql_query::version[0] << "."
+                  << Dice::sparql_query::version[1] << "."
+        << Dice::sparql_query::version[2]
+        << std::endl;
+}
 
 TEST(subscriptGeneratingTests, basic1) {
     //creating 2 triple patterns and adding them into a node
