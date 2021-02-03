@@ -5,6 +5,7 @@
 #include <utility>
 
 #include "Dice/sparql-query/Nodes/QueryNodes/GroupingNodes/GroupingDecorator.hpp"
+#include "Dice/sparql-query/Exceptions/NotImplementedException.hpp"
 
 namespace Dice::sparql::Nodes::QueryNodes::GroupingNodes {
 
@@ -23,11 +24,11 @@ namespace Dice::sparql::Nodes::QueryNodes::GroupingNodes {
         }
 
         std::vector<std::vector<std::string>> generateStringOperands() override {
-            throw internal::Exceptions::NotImplementedException();
+            throw Dice::sparql::internal::Exceptions::NotImplementedException();
         }
 
         std::vector<TriplePattern> getBgps() override {
-            throw internal::Exceptions::NotImplementedException();
+            throw Dice::sparql::internal::Exceptions::NotImplementedException();
         }
     };
 }// namespace Dice::sparql::Nodes::QueryNodes::GroupingNodes

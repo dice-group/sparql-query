@@ -4,6 +4,7 @@
 #include <variant>
 
 #include "Dice/sparql-query/Nodes/QueryNodes/SpecialNodes/SpecialNode.hpp"
+#include "Dice/sparql-query/Exceptions/NotImplementedException.hpp"
 
 namespace Dice::sparql::Nodes::QueryNodes::SpecialNodes {
     class ServicePatternNode : public SpecialNode {
