@@ -21,7 +21,7 @@ namespace Dice::sparql::Nodes::QueryNodes::LeafNodes {
 
 
         std::vector<std::vector<std::string>> generateStringOperands() override {
-            std::vector<std::vector<std::string>> operands;
+            std::vector<std::vector<std::string>> operands{};
             for (TriplePattern &element : elements) {
                 std::vector<std::string> patternOperands;
                 if (std::holds_alternative<Variable>(element.subject()))
@@ -30,7 +30,8 @@ namespace Dice::sparql::Nodes::QueryNodes::LeafNodes {
                     patternOperands.push_back(std::get<Variable>(element.predicate()).getName());
                 if (std::holds_alternative<Variable>(element.object()))
                     patternOperands.push_back(std::get<Variable>(element.object()).getName());
-                operands.push_back(patternOperands);
+                if (not patternOperands.empty())
+                    operands.push_back(patternOperands);
             }
 
             return operands;
